@@ -20,10 +20,20 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     this.getQuestions();
+    this.mixAnw();
   }
 
   getQuestions(): void {
     this.questionService.getQuestions().subscribe(questions => this.questions = questions);
+  }
+
+  mixAnw() {
+    for (var counter: number = 0; counter < this.questions.length ; counter ++) {
+      var question = this.questions[counter];
+
+      console.log(question);
+
+    }
   }
 
   // getQuestion() {

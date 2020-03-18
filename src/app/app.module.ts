@@ -15,6 +15,8 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { QuizService } from './quiz.service';
 import { QuestionComponent } from './components/question/question.component';
 import { QuestionService } from './question.service';
+import { QuizDetailComponent } from './components/quiz-detail/quiz-detail.component';
+import { QuestionDetailComponent } from './components/question-detail/question-detail.component';
 
 @NgModule({
   imports:      [ 
@@ -24,7 +26,7 @@ import { QuestionService } from './question.service';
     HttpClientModule, 
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }), 
   ],
-  declarations: [ AppComponent, UserComponent, UserDetailComponent, QuizComponent, QuestionComponent ],
+  declarations: [ AppComponent, UserComponent, UserDetailComponent, QuizComponent, QuestionComponent, QuizDetailComponent, QuestionDetailComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [ QuizService, InMemoryDataService, QuestionService ]
 })

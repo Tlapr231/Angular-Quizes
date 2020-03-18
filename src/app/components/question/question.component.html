@@ -1,8 +1,17 @@
 <ul>
-  <li *ngFor="let question of questions">
+  <li class="question" *ngFor="let question of questions">
     <p>ID : {{ question.id }}.</p>
     <p>Category : "{{ question.category }}".</p>
     <p>Diffuculty : {{ question.difficulty }}.</p>
     <p>Number of Questions : {{ question.question }}.</p>
+    <p>Anwsers : </p>
+    <ul>
+      <li class="question">
+        {{ question.correctAnw }}
+      </li>
+      <li class="question" *ngFor="let anw of question.incorrectAnw">
+        {{ anw }}
+      </li>
+    </ul>
   </li>
 </ul>

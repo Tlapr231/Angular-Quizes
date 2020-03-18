@@ -29,7 +29,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'easy',
         question: 'Who directed the movies "Pulp Fiction", "Reservoir Dogs" and "Django Unchained"?',
         correctAnw: 'Quentin Tarantino',
-        incorrect_answers: ['Martin Scorcese','Steven Spielberg','James Cameron']
+        incorrectAnw: ['Martin Scorcese','Steven Spielberg','James Cameron']
       },
       { //2
         id: 2,
@@ -37,7 +37,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'easy',
         question: 'The Queen song "A Kind Of Magic" is featured in which 1986 film?',
         correctAnw: 'Highlander',
-        incorrect_answers: ['Flash Gordon','Labyrinth','Howard the Duck']
+        incorrectAnw: ['Flash Gordon','Labyrinth','Howard the Duck']
       },
       { //3
         id: 3,
@@ -45,7 +45,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'easy',
         question: 'What was the title of the first Bond movie, released in 1962?',
         correctAnw: 'Dr. No',
-        incorrect_answers: ['From Russia with Love','Goldfinger','Thunderball']
+        incorrectAnw: ['From Russia with Love','Goldfinger','Thunderball']
       },
       { //4
         id: 4,
@@ -53,7 +53,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'medium',
         question: 'This movie contains the quote, "I love the smell of napalm in the morning!"',
         correctAnw: 'Apocalypse Now',
-        incorrect_answers: ['Platoon','The Deer Hunter','Full Metal Jacket']
+        incorrectAnw: ['Platoon','The Deer Hunter','Full Metal Jacket']
       },
       { //5
         id: 5,
@@ -61,7 +61,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'hard',
         question: 'In the movie "Scream" who is Ghost Face?',
         correctAnw: 'Billy Loomis and Stu Macher',
-        incorrect_answers: ['Dewey Riley','Sidney Prescott','Archie Prescott and Philip Marv']
+        incorrectAnw: ['Dewey Riley','Sidney Prescott','Archie Prescott and Philip Marv']
       },
       { //6
         id: 6,
@@ -69,7 +69,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'easy',
         question: 'The 2016 Disney animated film "Moana"; is based on which culture?',
         correctAnw: 'Polynesian',
-        incorrect_answers: ['Native American','Japanese','Nordic']
+        incorrectAnw: ['Native American','Japanese','Nordic']
       },
       { //7
         id: 7,
@@ -77,7 +77,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'hard',
         question: 'In "Star Trek Nemesis", why was Praetor Shinzon created?',
         correctAnw: 'To replace Picard as a Romulan Agent',
-        incorrect_answers: ['To destroy the Enterprise','To become Picard\'s friend ','To steal the Enterprise']
+        incorrectAnw: ['To destroy the Enterprise','To become Picard\'s friend ','To steal the Enterprise']
       },
       { //8
         id: 8,
@@ -85,7 +85,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'medium',
         question: 'What is Lilo\'s last name from Lilo and Stitch?',
         correctAnw: 'Pelekai',
-        incorrect_answers: ['Anoa\'i","Kealoha","Ku\'ulei']
+        incorrectAnw: ['Anoa\'i','Kealoha','Ku\'ulei']
       },
       { //9
         id: 9, 
@@ -93,7 +93,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'medium',
         question: 'Which actor and martial artist starred as Colonel Guile in the 1994 action film adaptation of Street Fighter?',
         correctAnw: 'Jean-Claude Van Damme',
-        incorrect_answers: ['Chuck Norris','Steven Seagal','Scott Adkins']
+        incorrectAnw: ['Chuck Norris','Steven Seagal','Scott Adkins']
       },
       { //10
         id: 10,
@@ -101,7 +101,7 @@ export class InMemoryDataService implements InMemoryDbService {
         difficulty: 'hard',
         question: 'In the film "Harry Potter and the Order of The Phoenix", why was Harry Potter\'s scream, after Sirius Black died, muted?',
         correctAnw: 'Too Agonizing',
-        incorrect_answers: ['Too Loud','Too Harsh','Too Violent']
+        incorrectAnw: ['Too Loud','Too Harsh','Too Violent']
       },
     ]   
     return {quizes, questions};

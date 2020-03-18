@@ -5,4 +5,5 @@ export interface question {
   question: string;
   correctAnw: string;
   incorrectAnw: string[];
+  anwsers: string[];
 }
