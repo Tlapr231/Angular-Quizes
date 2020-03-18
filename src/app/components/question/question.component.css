@@ -1,12 +1,12 @@
 /* UsersComponent's private CSS styles */
-.question {
+/* .question {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
-}
+} */
 
-.question li {
+/* .question li {
   position: relative;
   cursor: pointer;
   background-color: #E8ECF0;
@@ -20,12 +20,20 @@
 .question li:hover {
   background-color: #B8CACF;
   margin-left: 1em;
-}
+} */
 
-.question a {
+/* .question a {
   color: #333;
   text-decoration: none;
   position: relative;
   display: block;
   width: 250px;
+} */
+
+.correct:active {
+  background-color: green;
+}
+
+.incorrect:active {
+  background-color: red;
 }
