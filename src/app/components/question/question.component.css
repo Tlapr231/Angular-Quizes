@@ -30,10 +30,3 @@
   width: 250px;
 } */
 
-.correct:active {
-  background-color: green;
-}
-
-.incorrect:active {
-  background-color: red;
-}

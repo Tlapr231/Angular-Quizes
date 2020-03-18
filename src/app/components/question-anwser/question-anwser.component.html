@@ -1,0 +1,19 @@
+<p>ID : {{ question.id }}.</p>
+<p>Category : "{{ question.category }}".</p>
+<p>Diffuculty : {{ question.difficulty }}.</p>
+<p>Number of Questions : {{ question.question }}.</p>
+    
+<div *ngIf="question.anwser">
+  <p>Anwsers : </p>
+    
+  <ul>
+    <li class="question" *ngFor="let anwser of question.anwser">
+      <div *ngIf="anwser === question.correctAnw">
+        <p class="correct">{{ anwser }}</p>
+      </div>
+      <div *ngIf="anwser !== question.correctAnw">
+        <p class="incorrect">{{ anwser }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
