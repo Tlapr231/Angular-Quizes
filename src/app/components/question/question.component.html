@@ -1,10 +1,10 @@
 <ul>
   <li class="question" *ngFor="let question of questions">
 
-    <p>ID : {{ question.id }}.</p>
-    <p>Category : "{{ question.category }}".</p>
-    <p>Diffuculty : {{ question.difficulty }}.</p>
-    <p>Number of Questions : {{ question.question }}.</p>
+    <p>ID : {{ question.id }}</p>
+    <p>Category : "{{ question.category }}"</p>
+    <p>Diffuculty : {{ question.difficulty }}</p>
+    <p>Questions : {{ question.question }}</p>
 
     <a routerLink="/questiona/{{question.id}}">
       <button class="raised">Take the Question</button>
