@@ -3,8 +3,20 @@
 <ul class="Quiz">
   <li *ngFor="let quiz of quizes">
     <!-- <a routerLink="/quiz/{{quiz.id}}"> -->
-      <span class="badge">{{ quiz.difficulty }}</span> {{ user.string }}
+    <p>Category : "{{ quiz.category }}".</p>
+    <p>Diffuculty : {{ quiz.difficulty }}.</p>
+    <p>Number of Questions : {{ quiz.numberOfQuestions }}.</p>
+    <ul>
+      <li *ngFor="let question of quiz.questions">
+        <p>{{ question.question }}</p>
+      </li>
+    </ul>
     <!-- </a> -->
-    <button class='delete' title="Delete User" (click)="delete(user)">X</button>
   </li>
 </ul>
+<!-- 
+  numberOfQuestions: number;
+  category: string;
+  difficulty: string;
+  questions: Question[]; 
+-->

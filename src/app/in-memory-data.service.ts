@@ -14,7 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const quizes = [
       {
-        numberOfQuestion: 10,
+        numberOfQuestions: 10,
         category: 'Entertainment: Film',
         difficulty: 'mixed',
         questions: [
