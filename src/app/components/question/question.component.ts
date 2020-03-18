@@ -16,8 +16,7 @@ export class QuestionComponent implements OnInit {
   questions: Question[];
 
   constructor( 
-    private questionService: QuestionService,
-    private location: Location) { }
+    private questionService: QuestionService) { }
 
   ngOnInit() {
     this.getQuestions();

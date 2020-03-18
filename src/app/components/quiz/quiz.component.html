@@ -1,18 +1,20 @@
 <ul class="Quiz">
   <li *ngFor="let quiz of quizes">
-    <!-- <a routerLink="/quiz/{{quiz.id}}"> -->
     <p>ID : {{ quiz.id }}.</p>
     <p>Category : "{{ quiz.category }}".</p>
     <p>Diffuculty : {{ quiz.difficulty }}.</p>
     <p>Number of Questions : {{ quiz.numberOfQuestions }}.</p>
+    
     <ul>
       <li *ngFor="let question of quiz.questions">
-        <p>{{ question.question }}</p>
+        <p>{{ question }}</p>
       </li>
     </ul>
-    <!-- </a> -->
   </li>
 </ul>
+
+<a routerLink="/questions">All Questions</a>
+
 <!-- 
   numberOfQuestions: number;
   category: string;
