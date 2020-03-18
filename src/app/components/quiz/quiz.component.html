@@ -1,6 +1,7 @@
 <ul class="Quiz">
   <li *ngFor="let quiz of quizes">
     <!-- <a routerLink="/quiz/{{quiz.id}}"> -->
+    <p>ID : {{ quiz.id }}.</p>
     <p>Category : "{{ quiz.category }}".</p>
     <p>Diffuculty : {{ quiz.difficulty }}.</p>
     <p>Number of Questions : {{ quiz.numberOfQuestions }}.</p>

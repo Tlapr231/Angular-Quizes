@@ -14,11 +14,13 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const quizes = [
       {
+        id: 1000,
         numberOfQuestions: 10,
         category: 'Entertainment: Film',
         difficulty: 'mixed',
         questions: [
           { //1
+            id: 1,
             category: 'Entertainment: Film',
             difficulty: 'easy',
             question: 'Who directed the movies "Pulp Fiction", "Reservoir Dogs" and "Django Unchained"?',
@@ -26,6 +28,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['Martin Scorcese','Steven Spielberg','James Cameron']
           },
           { //2
+            id: 2,
             category: 'Entertainment: Film',
             difficulty: 'easy',
             question: 'The Queen song "A Kind Of Magic" is featured in which 1986 film?',
@@ -33,6 +36,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['Flash Gordon','Labyrinth','Howard the Duck']
           },
           { //3
+            id: 3,
             category: 'Entertainment: Film',
             difficulty: 'easy',
             question: 'What was the title of the first Bond movie, released in 1962?',
@@ -40,6 +44,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['From Russia with Love','Goldfinger','Thunderball']
           },
           { //4
+            id: 4,
             category: 'Entertainment: Film',
             difficulty: 'medium',
             question: 'This movie contains the quote, "I love the smell of napalm in the morning!"',
@@ -47,6 +52,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['Platoon','The Deer Hunter','Full Metal Jacket']
           },
           { //5
+            id: 5,
             category: 'Entertainment: Film',
             difficulty: 'hard',
             question: 'In the movie "Scream" who is Ghost Face?',
@@ -54,6 +60,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['Dewey Riley','Sidney Prescott','Archie Prescott and Philip Marv']
           },
           { //6
+            id: 6,
             category: 'Entertainment: Film',
             difficulty: 'easy',
             question: 'The 2016 Disney animated film "Moana"; is based on which culture?',
@@ -61,6 +68,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['Native American','Japanese','Nordic']
           },
           { //7
+            id: 7,
             category: 'Entertainment: Film',
             difficulty: 'hard',
             question: 'In "Star Trek Nemesis", why was Praetor Shinzon created?',
@@ -68,6 +76,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['To destroy the Enterprise','To become Picard\'s friend ','To steal the Enterprise']
           },
           { //8
+            id: 8,
             category: 'Entertainment: Film',
             difficulty: 'medium',
             question: 'What is Lilo\'s last name from Lilo and Stitch?',
@@ -75,6 +84,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['Anoa\'i","Kealoha","Ku\'ulei']
           },
           { //9
+            id: 9, 
             category: 'Entertainment: Film',
             difficulty: 'medium',
             question: 'Which actor and martial artist starred as Colonel Guile in the 1994 action film adaptation of Street Fighter?',
@@ -82,6 +92,7 @@ export class InMemoryDataService implements InMemoryDbService {
             incorrect_answers: ['Chuck Norris','Steven Seagal','Scott Adkins']
           },
           { //10
+            id: 10,
             category: 'Entertainment: Film',
             difficulty: 'hard',
             question: 'In the film "Harry Potter and the Order of The Phoenix", why was Harry Potter\'s scream, after Sirius Black died, muted?',
@@ -95,8 +106,8 @@ export class InMemoryDataService implements InMemoryDbService {
     return {quizes};
   }
 
-  genId(users: User[]): number {
-    return users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 11; 
+  genId(quizes: Quiz[]): number {
+    return quizes.length > 0 ? Math.max(...quizes.map(quiz => quiz.id)) + 1 : 1000; 
   }
 
 }
