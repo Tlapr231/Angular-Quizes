@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { Question } from '../../interface/question';
+import { QuestionService } from '../../question.service'
 
 @Component({
   selector: 'app-question',
@@ -7,12 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
-
   //shuflle(arr);
 
-  constructor() { }
+  questions: Question[];
+
+  constructor( 
+    private questionService: QuestionService,
+    private location: Location) { }
 
   ngOnInit() {
+    this.getQuestions();
   }
+
+  getQuestions(): void {
+    this.questionService.getQuestions().subscribe(questions => this.questions = questions);
+  }
+
+  // getQuestion() {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.questionService.getQuestion(id).subscribe(question => this.question = question);
+  // }
 
 }

@@ -14,6 +14,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 
 import { QuizService } from './quiz.service';
 import { QuestionComponent } from './components/question/question.component';
+import { QuestionService } from './question.service';
 
 @NgModule({
   imports:      [ 
@@ -25,6 +26,6 @@ import { QuestionComponent } from './components/question/question.component';
   ],
   declarations: [ AppComponent, UserComponent, UserDetailComponent, QuizComponent, QuestionComponent ],
   bootstrap:    [ AppComponent ],
-  providers:    [ QuizService, InMemoryDataService ]
+  providers:    [ QuizService, InMemoryDataService, QuestionService ]
 })
 export class AppModule { }

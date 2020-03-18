@@ -111,4 +111,8 @@ export class InMemoryDataService implements InMemoryDbService {
     return quizes.length > 0 ? Math.max(...quizes.map(quiz => quiz.id)) + 1 : 1000; 
   }
 
+  genId(questions: Question[]): number {
+    return questions.length > 0 ? Math.max(...questions.map(quiz => quiz.id)) + 1 : 1000; 
+  }
+
 }
