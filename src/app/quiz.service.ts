@@ -1,30 +1,27 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators'
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, of } from "rxjs";
+import { catchError, map, tap } from "rxjs/operators";
 
-import { Quiz } from './interface/quiz';
+import { Quiz } from "./interface/quiz";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class QuizService {
-
-  private quizUrl = 'api/quizes';
+  private quizUrl = "api/quizes";
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-  }
+    headers: new HttpHeaders({ "Content-Type": "application/json" })
+  };
 
-  constructor(
-    private http: HttpClient 
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getQuizes(): Observable<Quiz[]> {
     return this.http.get<Quiz[]>(this.quizUrl).pipe(
-      tap(_ => this.log('Fetched All Quizes')),
-      catchError(this.handleError<Quiz[]>('getQuizes', []))
-    )
+      tap(_ => this.log("Fetched All Quizes")),
+      catchError(this.handleError<Quiz[]>("getQuizes", []))
+    );
   }
 
   //TODO (only going to use get quizes for testing for now)
@@ -34,26 +31,23 @@ export class QuizService {
   // }
 
   // addQuiz()
-  
+
   // deleteQuiz()
-  
+
   // updateQuiz()
 
   // searchQuiz()
 
-
   //private functions
-  private log(message: string){
+  private log(message: string) {
     console.log(`QuizService: ${message}`);
   }
 
-  private handleError<T> (operation = 'operation', result?: T){
-    return (error: any) : Observable<T> => {
-
+  private handleError<T>(operation = "operation", result?: T) {
+    return (error: any): Observable<T> => {
       console.error(error);
       this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
-    }
-  } 
-
+    };
+  }
 }

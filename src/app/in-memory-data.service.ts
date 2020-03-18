@@ -11,21 +11,6 @@ import { Question } from './interface/question'
 export class InMemoryDataService implements InMemoryDbService {
 
   //this db will only be temporairly used to test components (and then to store data after)
-
-  //data used
-  // {"response_code":0,"results":[
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"easy","question":"Who directed the movies &quot;Pulp Fiction&quot;, &quot;Reservoir Dogs&quot; and &quot;Django Unchained&quot;?","correct_answer":"Quentin Tarantino","incorrect_answers":["Martin Scorcese","Steven Spielberg","James Cameron"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"easy","question":"The Queen song `A Kind Of Magic` is featured in which 1986 film?","correct_answer":"Highlander","incorrect_answers":["Flash Gordon","Labyrinth","Howard the Duck"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"easy","question":"What was the title of the first Bond movie, released in 1962?","correct_answer":"Dr. No","incorrect_answers":["From Russia with Love","Goldfinger","Thunderball"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"medium","question":"This movie contains the quote, &quot;I love the smell of napalm in the morning!&quot;","correct_answer":"Apocalypse Now","incorrect_answers":["Platoon","The Deer Hunter","Full Metal Jacket"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"hard","question":"In the movie &quot;Scream&quot; who is Ghost Face?","correct_answer":"Billy Loomis and Stu Macher","incorrect_answers":["Dewey Riley","Sidney Prescott","Archie Prescott and Philip Marv"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"easy","question":"The 2016 Disney animated film &#039;Moana&#039; is based on which culture?","correct_answer":"Polynesian","incorrect_answers":["Native American","Japanese","Nordic"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"hard","question":"In &quot;Star Trek Nemesis&quot;, why was Praetor Shinzon created?","correct_answer":"To replace Picard as a Romulan Agent","incorrect_answers":["To destroy the Enterprise","To become Picard&#039;s friend ","To steal the Enterprise"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"medium","question":"What is Lilo&#039;s last name from Lilo and Stitch?","correct_answer":"Pelekai","incorrect_answers":["Anoa\u02bbi","Kealoha","Ku\u02bbulei"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"medium","question":"Which actor and martial artist starred as Colonel Guile in the 1994 action film adaptation of Street Fighter?","correct_answer":"Jean-Claude Van Damme","incorrect_answers":["Chuck Norris","Steven Seagal","Scott Adkins"]},
-	// {"category":"Entertainment: Film","type":"multiple","difficulty":"hard","question":"In the film &quot;Harry Potter and the Order of The Phoenix&quot;, why was Harry Potter&#039;s scream, after Sirius Black died, muted?","correct_answer":"Too Agonizing","incorrect_answers":["Too Loud","Too Harsh","Too Violent"]}
-// ]}
-
   createDb() {
     const quizes = [
       {
