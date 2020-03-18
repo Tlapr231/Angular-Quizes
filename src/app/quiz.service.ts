@@ -36,6 +36,7 @@ export class QuizService {
 
   // updateQuiz()
 
+  //Going to need for Quiz-Detail Soon
   // searchQuiz()
 
   //private functions

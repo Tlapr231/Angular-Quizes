@@ -10,11 +10,11 @@ const routes: Routes = [
   // {path: 'home', component: HomeComponent},
   { path: 'quiz', component: QuizComponent },
   { path: 'question/:id', component: QuestionComponent },
-  { path: '', redirectTo: '/quiz', pathMatch: 'full' },
+  { path: '', redirectTo: '/quiz', pathMatch: 'full' }
 ]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
-  declarations: [ RouterModule ]
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
