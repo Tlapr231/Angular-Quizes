@@ -56,26 +56,26 @@ export class QuizService {
     );
   }
 
-  // addQuiz(numQuest: number, cate: string, diff: string): Observable<string[]> {
-  //   let apiUrl = 'https://opentdb.com/api.php?amount=';
+  addQuiz(numQuest: number, cate: string, diff: string): Observable<string[]> {
+    let apiUrl = 'https://opentdb.com/api.php?amount=';
     
-  //   apiUrl = apiUrl + numQuest;
-  //   if (cate !== 'Any Category') {
-  //     apiUrl = apiUrl + '&category=' + categoryId[cate];
-  //   }  
-  //   if (diff === 'Any Difficulty'){
-  //     apiUrl = apiUrl + '&diffuculty=' + diff;
-  //   }
-  //   apiUrl = apiUrl + '&type=multiple';
+    apiUrl = apiUrl + numQuest;
+    if (cate !== 'Any Category') {
+      apiUrl = apiUrl + '&category=' + categoryId[cate];
+    }  
+    if (diff === 'Any Difficulty'){
+      apiUrl = apiUrl + '&diffuculty=' + diff;
+    }
+    apiUrl = apiUrl + '&type=multiple';
 
-  //   console.log(apiUrl);
+    console.log(apiUrl);
 
-  //   return this.http.get<ApiResult>(apiUrl).pipe(
-  //     tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
-  //     catchError(this.handleError<ApiResult>('addQuiz', []))
-  //   );
+    return this.http.get<Quiz[]>(apiUrl).pipe(
+      tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
+      catchError(this.handleError<Quiz[]>('addQuiz', []))
+    );
 
-  // }
+  }
 
 
   //TODO (only going to use get quizes for testing for now)
