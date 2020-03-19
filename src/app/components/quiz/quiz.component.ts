@@ -29,13 +29,6 @@ export class QuizComponent implements OnInit {
     this.quizService.getQuizes().subscribe(quizes => this.quizes = quizes);
   }
 
-  // generateQuiz (numQuest: number, cate: string, diff: string){
-  //   this.quizService.addQuiz(numQuest, cate, diff).subscribe(quiz => {
-  //     quiz = quiz.json();
-  //     console.log(quiz);
-  //     this.quizes.push(quiz),
-  //     console.log('quiz.component.ts has generated a quiz');
-  //   });
-  // }
+  
 
 }

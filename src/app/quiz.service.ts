@@ -56,11 +56,6 @@ export class QuizService {
     );
   }
 
-  private testUrl = 'https://jsonplaceholder.typicode.com/users';
-  getUsers() {
-    return this.http.get<User[]>(this.testUrl);
-  }
-
   // addQuiz(numQuest: number, cate: string, diff: string): Observable<string[]> {
   //   let apiUrl = 'https://opentdb.com/api.php?amount=';
     
