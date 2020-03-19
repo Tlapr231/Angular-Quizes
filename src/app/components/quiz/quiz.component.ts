@@ -14,6 +14,35 @@ export class QuizComponent implements OnInit {
   
   quizes: Quiz[];
 
+  //Dropdown Data
+  category: any = [
+    "Any Category",
+    "Animals",
+    "Art",
+    "Entertainment: Books", 
+    "General Knowledge", 
+    "Entertainment: Film",
+    "Entertainment: Music",
+    "Entertainment: Musicals & Theatres",
+    "Entertainment: Television",
+    "Entertainment: Video Games",
+    "Entertainment: Board Games",
+    "Science & Nature",
+    "Science: Computers",
+    "Science: Mathematics",
+    "Mythology",
+    "Sports",
+    "Geography",
+    "History",
+    "Politics",
+    "Celebrities",
+    "Vehicles",
+    "Entertainment: Comics",
+    "Science: Gadgets",
+    "Entertainment: Japanese Anime & Manga",
+    "Entertainment: Cartoon & Animations",
+  ]
+
   constructor(
     private quizService: QuizService
   ) { }
@@ -28,7 +57,6 @@ export class QuizComponent implements OnInit {
 
   newQuiz(numQuest: number, cate: string, diff: string) {
     this.quizService.addQuiz(numQuest, cate, diff).subscribe(data => {
-      console.log(data);
       data.id = "1001"; //TODO genID();
       data.category = cate;
       data.difficulty = diff;
@@ -37,7 +65,6 @@ export class QuizComponent implements OnInit {
       delete data.response_code;
       delete data.results;
       console.log(data);
-
       this.quizes.push(data);
     })
   }
