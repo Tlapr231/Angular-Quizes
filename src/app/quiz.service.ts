@@ -52,7 +52,7 @@ export class QuizService {
     );
   }
 
-  addQuiz(numQuest: number, cate: string, diff: string): Observable<Quiz[]> {
+  addQuiz(numQuest: number, cate: string, diff: string): Observable<string[]> {
     let apiUrl = 'https://opentdb.com/api.php?amount=';
     
     apiUrl = apiUrl + numQuest;
@@ -66,9 +66,9 @@ export class QuizService {
 
     console.log(apiUrl);
 
-    return this.http.get<Quiz[]>(apiUrl).pipe(
+    return this.http.get<any>(apiUrl).pipe(
       tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
-      catchError(this.handleError<Quiz[]>('addQuiz', []))
+      catchError(this.handleError<any>('addQuiz', []))
     );
 
   }
