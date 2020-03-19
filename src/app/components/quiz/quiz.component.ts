@@ -84,7 +84,7 @@ export class QuizComponent implements OnInit {
   }
 
   newQuiz(numQuest: number, cate: string, diff: string) {
-    this.quizService.addQuiz(numQuest, cate, diff).subscribe(data => {
+    this.quizService.requestQuiz(numQuest, cate, diff).subscribe(data => {
       if (data.response_code !== 0){
         console.log("Not a valid request.");
         return;
@@ -96,7 +96,7 @@ export class QuizComponent implements OnInit {
       data.questions = data.results;
       delete data.response_code;
       delete data.results;
-      
+
       this.quizes.push(data);
     })
   }

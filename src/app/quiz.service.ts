@@ -56,7 +56,18 @@ export class QuizService {
     );
   }
 
-  addQuiz(numQuest: number, cate: string, diff: string): Observable<string[]> {
+  getQuiz(id: number){
+    console.log('TODO')//TODO
+  }
+
+
+  // deleteQuiz()
+
+  // updateQuiz()
+
+  //searchQuiz()
+  
+  requestQuiz(numQuest: number, cate: string, diff: string): Observable<Object> {
     let apiUrl = 'https://opentdb.com/api.php?amount=';
     
     apiUrl = apiUrl + numQuest;
@@ -68,30 +79,12 @@ export class QuizService {
     }
     apiUrl = apiUrl + '&type=multiple';
 
-    return this.http.get<Quiz[]>(apiUrl).pipe(
+    return this.http.get<Object>(apiUrl).pipe(
       tap(_ => this.log('Fetched from the Open Trivia DB with : ' + apiUrl)),
       catchError(this.handleError<Quiz[]>('addQuiz', []))
     );
 
   }
-
-  getQuiz(id: number){
-    console.log('TODO')//TODO
-  }
-
-  //TODO (only going to use get quizes for testing for now)
-  //Could implement more search Options later
-  // getQuizByCategory(category: string): Observable<Quiz[]>{
-
-  // }
-
-
-  // deleteQuiz()
-
-  // updateQuiz()
-
-  //Going to need for Quiz-Detail Soon
-  // searchQuiz()
 
   //private functions
   private log(message: string) {
