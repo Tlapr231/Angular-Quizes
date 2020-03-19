@@ -89,7 +89,7 @@ export class QuizComponent implements OnInit {
         console.log("Not a valid request.");
         return;
       }
-      data.id = "1001"; //TODO genID();
+      data.id = this.genId(this.quizes); //TODO genID();
       data.category = cate;
       data.difficulty = diff;
       data.numberOfQuestions = numQuest;
@@ -99,6 +99,10 @@ export class QuizComponent implements OnInit {
       console.log(data);
       this.quizes.push(data);
     })
+  }
+
+  genId(quizes: Quiz[]): number {
+    return quizes.length > 0 ? Math.max(...quizes.map(quiz => quiz.id)) + 1 : 1000; 
   }
 
   //========== Getters ==========//
