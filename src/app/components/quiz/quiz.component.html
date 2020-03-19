@@ -16,11 +16,15 @@
 
 <div>
   <label> Category : 
-    <input>
+    <select>
+      <option *ngFor="let category of categories" [ngValue]="category | lowercase">{{ category }}</option>
+    </select>
   </label>
 
   <label> Difficulty : 
-    <input>
+    <select>
+      <option *ngFor="let difficulty of difficulties">{{ difficulty }}</option>
+    </select>
   </label>
 
   <label> Number of Questions : 
