@@ -4,6 +4,7 @@ import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
 import { Quiz } from "./interface/quiz";
+import { ApiResult } from './interface/ApiResult';
 
   var categoryId = {
     "General Knowledge": 9, 
@@ -66,9 +67,9 @@ export class QuizService {
 
     console.log(apiUrl);
 
-    return this.http.get<any>(apiUrl).pipe(
+    return this.http.get<ApiResult>(apiUrl).pipe(
       tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
-      catchError(this.handleError<any>('addQuiz', []))
+      catchError(this.handleError<ApiResult>('addQuiz', []))
     );
 
   }
