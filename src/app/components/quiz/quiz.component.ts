@@ -11,8 +11,6 @@ import { User } from '../../interface/user';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-//rm after
-  users$: User[];
   
   quizes: Quiz[];
 
