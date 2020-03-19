@@ -25,6 +25,7 @@ export class QuizComponent implements OnInit {
 
   //========== Variables ==========//
   quizes: Quiz[];
+  selectedQuiz: Quiz;
 
   //========== Dropdown Data ==========//
   categories: any = [
@@ -97,6 +98,7 @@ export class QuizComponent implements OnInit {
       delete data.response_code;
       delete data.results;
 
+      //quizService.addQuiz(data);
       this.quizes.push(data);
     })
   }
@@ -105,8 +107,15 @@ export class QuizComponent implements OnInit {
     return quizes.length > 0 ? Math.max(...quizes.map(quiz => quiz.id)) + 1 : 1000; 
   }
 
+
+
   //========== Getters ==========//
   get category() { return this.genQuizForm.get('category'); }
   get difficulty() { return this.genQuizForm.get('difficulty'); }
   get numberOfQuestions() { return this.genQuizForm.get('numberOfQuestions'); }
+
+  setSelectedQuiz(quiz: Quiz) {
+    this.selectedQuiz = quiz;
+    console.log(this.selectedQuiz);
+  }
 }

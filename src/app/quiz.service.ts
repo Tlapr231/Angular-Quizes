@@ -56,9 +56,10 @@ export class QuizService {
     );
   }
 
-  getQuiz(id: number){
-    console.log('TODO')//TODO
-  }
+  // getQuiz(id: number){
+  //   //this implementation is garbage because i dont have a real server to request data from
+    
+  // }
 
 
   // deleteQuiz()
