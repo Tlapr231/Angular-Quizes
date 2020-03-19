@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -24,11 +23,10 @@ import { QuestionAnwserComponent } from './components/question-anwser/question-a
     BrowserModule, 
     FormsModule, 
     AppRoutingModule,
-    HttpClientModule, 
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }), 
+    HttpClientModule,  
   ],
   declarations: [ AppComponent, UserComponent, UserDetailComponent, QuizComponent, QuestionComponent, QuizDetailComponent, QuestionDetailComponent, QuestionAnwserComponent ],
   bootstrap:    [ AppComponent ],
-  providers:    [ QuizService, InMemoryDataService, QuestionService ]
+  providers:    [ QuizService, QuestionService ]
 })
 export class AppModule { }

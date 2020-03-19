@@ -6,6 +6,9 @@ import { catchError, map, tap } from "rxjs/operators";
 import { Quiz } from "./interface/quiz";
 import { ApiResult } from './interface/ApiResult';
 
+//rm after 
+import { User } from './interface/user';
+
   var categoryId = {
     "General Knowledge": 9, 
     "Entertainment: Books": 10, 
@@ -53,26 +56,31 @@ export class QuizService {
     );
   }
 
-  addQuiz(numQuest: number, cate: string, diff: string): Observable<string[]> {
-    let apiUrl = 'https://opentdb.com/api.php?amount=';
-    
-    apiUrl = apiUrl + numQuest;
-    if (cate !== 'Any Category') {
-      apiUrl = apiUrl + '&category=' + categoryId[cate];
-    }  
-    if (diff === 'Any Difficulty'){
-      apiUrl = apiUrl + '&diffuculty=' + diff;
-    }
-    apiUrl = apiUrl + '&type=multiple';
-
-    console.log(apiUrl);
-
-    return this.http.get<ApiResult>(apiUrl).pipe(
-      tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
-      catchError(this.handleError<ApiResult>('addQuiz', []))
-    );
-
+  private testUrl = 'https://jsonplaceholder.typicode.com/users';
+  getUsers() {
+    return this.http.get<User[]>(this.testUrl);
   }
+
+  // addQuiz(numQuest: number, cate: string, diff: string): Observable<string[]> {
+  //   let apiUrl = 'https://opentdb.com/api.php?amount=';
+    
+  //   apiUrl = apiUrl + numQuest;
+  //   if (cate !== 'Any Category') {
+  //     apiUrl = apiUrl + '&category=' + categoryId[cate];
+  //   }  
+  //   if (diff === 'Any Difficulty'){
+  //     apiUrl = apiUrl + '&diffuculty=' + diff;
+  //   }
+  //   apiUrl = apiUrl + '&type=multiple';
+
+  //   console.log(apiUrl);
+
+  //   return this.http.get<ApiResult>(apiUrl).pipe(
+  //     tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
+  //     catchError(this.handleError<ApiResult>('addQuiz', []))
+  //   );
+
+  // }
 
 
   //TODO (only going to use get quizes for testing for now)
