@@ -12,8 +12,6 @@ import { QuizService } from "../../quiz.service";
   styleUrls: ['./quiz-detail.component.css']
 })
 export class QuizDetailComponent implements OnInit {
-  private _quiz = '';
-
 
   constructor(
     private route: ActivatedRoute,
@@ -22,14 +20,6 @@ export class QuizDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this._quiz);
   }
-
-  @Input()
-   set quiz(quiz: Quiz) {
-    this._quiz = (name && name.trim()) || '<no name set>';
-  }
-
-  get name(): string { return this._quiz; }
 
 }

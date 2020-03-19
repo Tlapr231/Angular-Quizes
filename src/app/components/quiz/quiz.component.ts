@@ -25,7 +25,6 @@ export class QuizComponent implements OnInit {
 
   //========== Variables ==========//
   quizes: Quiz[];
-  selectedQuiz: Quiz;
 
   //========== Dropdown Data ==========//
   categories: any = [
