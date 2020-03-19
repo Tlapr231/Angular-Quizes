@@ -40,8 +40,10 @@ import { User } from './interface/user';
   providedIn: "root"
 })
 export class QuizService {
+  
   private quizUrl = "https://my-json-server.typicode.com/Tlapr231/Angular-Quizes-DB/quizes";
 
+  selectedQuiz: Quiz;
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" })
@@ -56,11 +58,26 @@ export class QuizService {
     );
   }
 
+  getQuiz(id: number) {
+    const url = `${this.quizUrl}/${id}`;
+    return this.http.get<Quiz>(url).pipe(
+      tap(_ => this.log(`Fetched User id : ${id}`)),
+      catchError(this.handleError<Quiz>(`getQuiz id : ${id}`))
+    )
+  }
   // getQuiz(id: number){
   //   //this implementation is garbage because i dont have a real server to request data from
     
   // }
 
+  //These 2 functions are a terrible implementation but i dont have access to a server
+  setSelectedQuiz(quiz: Quiz){
+    this.selectedQuiz = quiz;
+  }
+
+  getSelectedQuiz(): Quiz{
+    return this.selectedQuiz;
+  }
 
   // deleteQuiz()
 

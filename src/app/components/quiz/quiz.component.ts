@@ -114,7 +114,7 @@ export class QuizComponent implements OnInit {
   get numberOfQuestions() { return this.genQuizForm.get('numberOfQuestions'); }
 
   setSelectedQuiz(quiz: Quiz) {
-    this.selectedQuiz = quiz;
-    console.log(this.selectedQuiz);
+    this.quizService.setSelectedQuiz(quiz);
+    console.log(quiz);
   }
 }

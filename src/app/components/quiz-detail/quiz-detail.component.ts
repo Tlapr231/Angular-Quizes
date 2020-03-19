@@ -13,6 +13,8 @@ import { QuizService } from "../../quiz.service";
 })
 export class QuizDetailComponent implements OnInit {
 
+  quiz: Quiz;
+
   constructor(
     private route: ActivatedRoute,
     private quizService: QuizService,
@@ -20,6 +22,16 @@ export class QuizDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //temp
+    if (+this.route.snapshot.paramMap.get('id') === 1000) {
+      this.quizService.getQuiz(+this.route.snapshot.paramMap.get('id')).subscribe(quiz => {
+        this.quiz = quiz
+        console.log(this.quiz);
+      });
+    } else {
+      this.quiz = this.quizService.getSelectedQuiz();
+    }
+    console.log(this.quiz);
   }
 
 }

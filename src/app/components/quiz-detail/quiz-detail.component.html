@@ -1,1 +1,15 @@
-<p> quiz detail works! </p>
+<div *ngIf="quiz">
+  <p>ID : {{ quiz.id }}.</p>
+  <p>Category : "{{ quiz.category }}".</p> 
+  <p>Diffuculty : {{ quiz.difficulty }}.</p>
+
+  <div *ngFor="let question of quiz.questions">
+    {{ question }}
+  </div>
+
+</div>
+
+<div *ngIf="!quiz">
+  <h1>Error 404</h1>
+  <h3>We can't seem to find what you are looking for</h3>
+</div>
