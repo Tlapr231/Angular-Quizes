@@ -89,14 +89,14 @@ export class QuizComponent implements OnInit {
         console.log("Not a valid request.");
         return;
       }
-      data.id = this.genId(this.quizes); //TODO genID();
+      data.id = this.genId(this.quizes); 
       data.category = cate;
       data.difficulty = diff;
       data.numberOfQuestions = numQuest;
       data.questions = data.results;
       delete data.response_code;
       delete data.results;
-      console.log(data);
+      
       this.quizes.push(data);
     })
   }

@@ -75,6 +75,9 @@ export class QuizService {
 
   }
 
+  getQuiz(id: number){
+    console.log('TODO')//TODO
+  }
 
   //TODO (only going to use get quizes for testing for now)
   //Could implement more search Options later
