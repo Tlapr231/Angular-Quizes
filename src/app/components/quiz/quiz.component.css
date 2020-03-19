@@ -1,0 +1,22 @@
+li {
+  list-style-type: none;
+  border-width: 2px;
+  border-style: solid;
+  margin: 8px auto;
+  border-radius: 10px;
+  padding: 0 16px 16px 16px ;
+  background-color: #fefefe;
+  width: 600px;
+}
+
+ul {
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+label {
+  display : block;
+}
