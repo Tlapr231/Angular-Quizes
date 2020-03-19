@@ -26,10 +26,8 @@ export class QuizComponent implements OnInit {
   }
 
   generateQuiz (numQuest: number, cate: string, diff: string){
-    console.log('number : ' + numQuest + ' | Category : ' + cate + ' | Difficulty : ' + diff);
-
-    this.quizService.addQuiz(numQuest, cate, diff);
-    console.log('quiz.component.ts is generating quiz');
+    this.quizService.addQuiz(numQuest, cate, diff).subscribe(quiz => {this.quizes.push(quiz)});
+    console.log('quiz.component.ts has generated a quiz');
   }
 
 }

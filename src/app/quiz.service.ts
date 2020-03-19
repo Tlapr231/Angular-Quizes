@@ -31,7 +31,7 @@ import { Quiz } from "./interface/quiz";
     "Entertainment: Japanese Anime & Manga": 31,
     "Entertainment: Cartoon & Animations": 32
   }
-  
+
 @Injectable({
   providedIn: "root"
 })
@@ -55,22 +55,20 @@ export class QuizService {
   addQuiz(numQuest: number, cate: string, diff: string): Observable<Quiz[]> {
     let apiUrl = 'https://opentdb.com/api.php?amount=';
     
-    this.log('number : ' + numQuest + ' | Category : ' + cate + ' | Difficulty : ' + diff);
-
     apiUrl = apiUrl + numQuest;
     if (cate !== 'Any Category') {
-      apiUrl = apiUrl + '&category=' + categoryId["Art"];
+      apiUrl = apiUrl + '&category=' + categoryId[cate];
     }  
-
     if (diff === 'Any Difficulty'){
       apiUrl = apiUrl + '&diffuculty=' + diff;
     }
-
     apiUrl = apiUrl + '&type=multiple';
 
-    this.log('Fetched from the api with : ' + apiUrl)
+    console.log(apiUrl);
+
     return this.http.get<Quiz[]>(apiUrl).pipe(
-      tap(_ => this.log('Fetched from the api with : ' + apiUrl))
+      tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
+      catchError(this.handleError<Quiz[]>('addQuiz', []))
     );
 
   }
