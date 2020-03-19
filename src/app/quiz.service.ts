@@ -63,15 +63,13 @@ export class QuizService {
     if (cate !== 'Any Category') {
       apiUrl = apiUrl + '&category=' + categoryId[cate];
     }  
-    if (diff === 'Any Difficulty'){
-      apiUrl = apiUrl + '&diffuculty=' + diff;
+    if (diff !== 'Any Difficulty'){
+      apiUrl = apiUrl + '&diffuculty=' + diff.toLocaleLowerCase();
     }
     apiUrl = apiUrl + '&type=multiple';
 
-    console.log(apiUrl);
-
     return this.http.get<Quiz[]>(apiUrl).pipe(
-      tap(_ => this.log('Tap : Fetched from the api with : ' + apiUrl)),
+      tap(_ => this.log('Fetched from the Open Trivia DB with : ' + apiUrl)),
       catchError(this.handleError<Quiz[]>('addQuiz', []))
     );
 

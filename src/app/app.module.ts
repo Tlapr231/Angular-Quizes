@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
@@ -23,9 +24,19 @@ import { QuestionAnwserComponent } from './components/question-anwser/question-a
     BrowserModule, 
     FormsModule, 
     AppRoutingModule,
-    HttpClientModule,  
+    HttpClientModule,
+    ReactiveFormsModule 
   ],
-  declarations: [ AppComponent, UserComponent, UserDetailComponent, QuizComponent, QuestionComponent, QuizDetailComponent, QuestionDetailComponent, QuestionAnwserComponent ],
+  declarations: [ 
+    AppComponent,
+    UserComponent, 
+    UserDetailComponent, 
+    QuizComponent, 
+    QuestionComponent, 
+    QuizDetailComponent, 
+    QuestionDetailComponent, 
+    QuestionAnwserComponent 
+  ],
   bootstrap:    [ AppComponent ],
   providers:    [ QuizService, QuestionService ]
 })

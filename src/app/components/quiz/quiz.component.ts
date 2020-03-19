@@ -65,9 +65,18 @@ export class QuizComponent implements OnInit {
   //========== Form ==========//
   genQuizForm = this.fb.group({
     category: ['', [Validators.required] ],
-    difficuly: ['', [Validators.required] ],
+    difficulty: ['', [Validators.required] ],
     numberOfQuestions: ['', [Validators.required] ]
-  })
+  });
+
+  onSubmit(){
+    if (!this.genQuizForm.valid) {
+      return false;
+    } else {
+      this.newQuiz(this.numberOfQuestions.value, this.category.value, this.difficulty.value);
+    }
+
+  }
 
   //========== Functions ==========//
   getQuizes(): void {
@@ -76,6 +85,10 @@ export class QuizComponent implements OnInit {
 
   newQuiz(numQuest: number, cate: string, diff: string) {
     this.quizService.addQuiz(numQuest, cate, diff).subscribe(data => {
+      if (data.response_code !== 0){
+        console.log("Not a valid request.");
+        return;
+      }
       data.id = "1001"; //TODO genID();
       data.category = cate;
       data.difficulty = diff;

@@ -14,22 +14,27 @@
   </li>
 </ul>
 
-<div>
+<form [formGroup]="genQuizForm" (ngSubmit)="onSubmit()">
+  
   <label> Category : 
-    <select>
-      <option *ngFor="let category of categories" [ngValue]="category | lowercase">{{ category }}</option>
+    <select formControlName="category">
+      <option *ngFor="let category of categories" [ngValue]="category">{{ category }}</option>
     </select>
   </label>
 
   <label> Difficulty : 
-    <select>
-      <option *ngFor="let difficulty of difficulties">{{ difficulty }}</option>
+    <select formControlName="difficulty">
+      <option *ngFor="let difficulty of difficulties" [ngValue]="difficulty">{{ difficulty }}</option>
     </select>
   </label>
 
   <label> Number of Questions : 
-    <input>
+    <input type="number" min="1" max="50" formControlName="numberOfQuestions">
   </label>
 
-  <button class="raised" (click)="newQuiz(10, 'Entertainment: Film', 'easy')">Generate new Quiz</button>
-</div>
+  <button class="raised" type="submit">Generate new Quiz</button>
+
+	<p>Form Value: {{ genQuizForm.value | json }}</p>
+	<p>Form Status: {{ genQuizForm.status }}</p>
+
+</form>
