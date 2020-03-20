@@ -24,13 +24,14 @@ export class QuizDetailComponent implements OnInit {
   ngOnInit() {
     //temp
     if (+this.route.snapshot.paramMap.get('id') === 1000) {
-      this.quizService.getQuiz(+this.route.snapshot.paramMap.get('id')).subscribe(quiz => {
+        this.quizService.getQuiz(+this.route.snapshot.paramMap.get('id')).subscribe(quiz => {
         this.quiz = quiz
         this.mixAnwsers();
-        console.log(this.quiz);
       });
     } else {
       this.quiz = this.quizService.getSelectedQuiz();
+      this.mixAnwsers();
+
     }
     console.log(this.quiz);
   }
