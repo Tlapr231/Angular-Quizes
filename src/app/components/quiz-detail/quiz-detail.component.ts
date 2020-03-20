@@ -38,7 +38,7 @@ export class QuizDetailComponent implements OnInit {
   mixAnwsers() {
     console.log("inside mixAnwser");
     console.log(this.quiz);
-    for(var i = 1; i < this.quiz.questions.length; i++){
+    for(var i = 0; i < this.quiz.questions.length; i++){
       console.log(this.quiz.questions[i]);
       let question = this.quiz.questions[i];
       let anwser = [ question.correctAnw, question.incorrectAnw[0], question.incorrectAnw[1], question.incorrectAnw[2] ];

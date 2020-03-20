@@ -9,7 +9,8 @@
     <p>Diffuculty : {{ question.difficulty }}.</p>
     <p>{{ question.question }}<p>
       <div class="grid-container">
-        <div class="grid-container" *ngFor="let anwser of ">
+        <div class="grid-container" *ngFor="let anwser of question.anwser">
+          {{ anwser }}
         </div>
       </div>
   </div>
