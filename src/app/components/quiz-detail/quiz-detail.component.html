@@ -3,13 +3,22 @@
   <p>Category : "{{ quiz.category }}".</p> 
   <p>Diffuculty : {{ quiz.difficulty }}.</p>
 
-  <div *ngFor="let question of quiz.questions">
-    {{ question }}
+  <div class="question" *ngFor="let question of quiz.questions">
+    <p>Id : {{ question.id }}</p>
+    <p>Category : "{{ question.category }}".</p> 
+    <p>Diffuculty : {{ question.difficulty }}.</p>
+    <p>{{ question.question }}<p>
+      <div class="grid-container">
+        <div class="grid-container" *ngFor="let anwser of ">
+        </div>
+      </div>
   </div>
 
 </div>
 
-<div *ngIf="!quiz">
+
+<!-- if cant find the quiz -->
+<div *ngIf="!quiz" class="wait">
   <h1>Error 404</h1>
   <h3>We can't seem to find what you are looking for</h3>
 </div>

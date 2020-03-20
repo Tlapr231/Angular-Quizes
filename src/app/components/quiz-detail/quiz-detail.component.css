@@ -1,0 +1,29 @@
+.question {
+  list-style-type: none;
+  border-width: 2px;
+  border-style: solid;
+  margin: 8px auto;
+  border-radius: 10px;
+  padding: 0 16px 16px 16px ;
+  background-color: #fefefe;
+  width: 600px;
+}
+
+.center {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
