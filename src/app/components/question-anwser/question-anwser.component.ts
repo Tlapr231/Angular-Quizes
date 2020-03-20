@@ -29,7 +29,7 @@ export class QuestionAnwserComponent implements OnInit {
     this.questionSercice.getQuestion(id).subscribe(question => {
       this.question = question;
       this.mixAnwsers();
-    });
+    }); 
   }
 
   mixAnwsers() {
