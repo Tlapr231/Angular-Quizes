@@ -15,15 +15,48 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+  grid-template-columns: 287px 287px;
+  grid-gap: 8px;
+  padding: 8px;
+  background-color: white;
 }
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+.grid-content {
   text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
   padding: 20px 0;
-  font-size: 30px;
+  transition: background-color 0.25s;
 }
+.grid-content:active {
+  transform: translateY(2px);
+}
+
+.grid-content:nth-child(1) {
+  background-color: #a641ff;
+}
+.grid-content:nth-child(1):hover {
+  background-color: #8731d1;
+}
+
+.grid-content:nth-child(2) {
+  background-color: #FF1F19;
+}
+.grid-content:nth-child(2):hover {
+  background-color: #c51913;
+}
+
+.grid-content:nth-child(3) {
+  background-color: #EFFF00;
+}
+.grid-content:nth-child(3):hover {
+  background-color: #abb800;
+}
+
+.grid-content:nth-child(4) {
+  background-color: #28FF71;
+}
+.grid-content:nth-child(4):hover {
+  background-color: #21c759;
+}
+

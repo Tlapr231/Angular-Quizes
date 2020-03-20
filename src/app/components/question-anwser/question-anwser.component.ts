@@ -33,7 +33,7 @@ export class QuestionAnwserComponent implements OnInit {
   }
 
   mixAnwsers() {
-    let anwser = [ this.question.correct_answers, this.question.incorrect_answers[0], this.question.incorrect_answers[1], this.question.incorrect_answers[2] ];
+    let anwser = [ this.question.correct_answer, this.question.incorrect_answers[0], this.question.incorrect_answers[1], this.question.incorrect_answers[2] ];
     this.shuffle(anwser); 
     this.question.anwser = anwser;
   }

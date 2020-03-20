@@ -42,7 +42,7 @@ export class QuizDetailComponent implements OnInit {
     for(var i = 0; i < this.quiz.questions.length; i++){
       console.log(this.quiz.questions[i]);
       let question = this.quiz.questions[i];
-      let anwser = [ question.correct_answers, question.incorrect_answers[0], question.incorrect_answers[1], question.incorrect_answers[2] ];
+      let anwser = [ question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1], question.incorrect_answers[2] ];
       this.shuffle(anwser); 
       question.anwser = anwser;
       this.quiz.questions[i] = question;
