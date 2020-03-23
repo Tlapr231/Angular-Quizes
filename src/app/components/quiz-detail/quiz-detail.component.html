@@ -21,18 +21,20 @@
 
   </div>
 
+  <!-- Correct Answer -->
   <div class="question good-answer" *ngIf="questionNum % 1 !== 0 && quiz.questions[questionNum - 0.5].correct_answer === chosenAnswer">
 
     <div>
       <h3>Correct!</h3>
     </div>
 
-    <button class="ghost" (click)="onClickAnswer()">
-      <span class="ghost">Next Question...</span>
+    <button class="ghost" (click)="onClickNextStep(0)">
+      <span>Next Question...</span>
     </button>
 
   </div>
 
+  <!-- Wrong Answer -->
   <div class="question wrong-answer" *ngIf="questionNum % 1 !== 0 && quiz.questions[questionNum - 0.5].correct_answer !== chosenAnswer">
 
     <div>
@@ -41,8 +43,25 @@
     </div>
 
 
-    <button class="ghost" (click)="onClickAnswer()">
-      <span class="ghost">Next Question...</span>
+    <button class="ghost" (click)="onClickNextStep(1)">
+      <span>Next Question...</span>
+    </button>
+
+  </div>
+
+  <!-- Final Results -->
+  <div class="question" *ngIf="questionNum >= quiz.questions.length">
+
+    <div>
+      <h3>Final Results</h3>
+      <p>Correct : {{ results[0] }}</p>
+      <p>Incorrect : {{ results[1] }}</p>
+
+    </div>
+
+
+    <button class="ghost" (click)="goBack()">
+      <span>Go Back</span>
     </button>
 
   </div>

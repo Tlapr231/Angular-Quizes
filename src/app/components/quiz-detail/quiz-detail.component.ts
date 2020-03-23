@@ -16,7 +16,7 @@ export class QuizDetailComponent implements OnInit {
   quiz: Quiz;
   questionNum: number;
   chosenAnswer: string;
-  isCorrect: boolean;
+  results: number[];
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +36,7 @@ export class QuizDetailComponent implements OnInit {
       this.mixAnswers();
     }
     this.questionNum = 0;
+    this.results = [0, 0];
     console.log(this.quiz);
   }
 
@@ -55,9 +56,18 @@ export class QuizDetailComponent implements OnInit {
   onClickAnswer(answer: string) {
     this.questionNum = this.questionNum + 0.5;
     this.chosenAnswer = answer;
-    console.log(this.questionNum % 1 !== 0);
-    console.log(this.chosenAnswer);
   }
+
+  onClickNextStep(num: number){
+    this.questionNum = this.questionNum + 0.5;
+    this.results[num] ++;
+  }
+
+  goBack(): void {
+    this.location.back();
+    console.log("closing");
+  }
+  
 // questionNum % 1 !== 0 && chosenAnswer === question.correct_answer
   //======= Private Function ======//
 
