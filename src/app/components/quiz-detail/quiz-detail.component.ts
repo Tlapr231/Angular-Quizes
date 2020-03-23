@@ -14,6 +14,9 @@ import { QuizService } from "../../quiz.service";
 export class QuizDetailComponent implements OnInit {
 
   quiz: Quiz;
+  questionNum: number;
+  chosenAnwser: string;
+  isCorrect: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +34,8 @@ export class QuizDetailComponent implements OnInit {
     } else {
       this.quiz = this.quizService.getSelectedQuiz();
       this.mixAnwsers();
-
     }
+    this.questionNum = 0;
     console.log(this.quiz);
   }
 
@@ -48,6 +51,11 @@ export class QuizDetailComponent implements OnInit {
       this.quiz.questions[i] = question;
     }
     console.log("Done with mixAnwser");
+  }
+
+  onClickAnwser(anwser: string) {
+    this.questionNum = this.questionNum + 0.5;
+    this.chosenAnwser = anwser;
   }
 
   //======= Private Function ======//

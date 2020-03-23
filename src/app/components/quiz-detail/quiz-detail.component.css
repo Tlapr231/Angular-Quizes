@@ -33,30 +33,30 @@
 }
 
 .grid-content:nth-child(1) {
-  background-color: #a641ff;
+  background-color: #9444e4;
 }
 .grid-content:nth-child(1):hover {
-  background-color: #8731d1;
+  background-color: #6b2fa7;
 }
 
 .grid-content:nth-child(2) {
-  background-color: #FF1F19;
+  background-color: #ff3355;
 }
 .grid-content:nth-child(2):hover {
-  background-color: #c51913;
+  background-color: #c22741;
 }
 
 .grid-content:nth-child(3) {
-  background-color: #EFFF00;
+  background-color: #ff7113;
 }
 .grid-content:nth-child(3):hover {
-  background-color: #abb800;
+  background-color: #c9580e;
 }
 
 .grid-content:nth-child(4) {
-  background-color: #28FF71;
+  background-color: #66bf39;
 }
 .grid-content:nth-child(4):hover {
-  background-color: #21c759;
+  background-color: #4c8f2b;
 }
 

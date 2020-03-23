@@ -3,16 +3,31 @@
   <p>Category : "{{ quiz.category }}".</p> 
   <p>Diffuculty : {{ quiz.difficulty }}.</p>
 
-  <div class="question" *ngFor="let question of quiz.questions">
-    <p>Id : {{ question.id }}</p>
-    <p>Category : "{{ question.category }}".</p> 
-    <p>Diffuculty : {{ question.difficulty }}.</p>
-    <p>{{ question.question }}<p>
+  <div *ngFor="let question of quiz.questions">
+    <div class="question" *ngIf="question.id === questionNum">
+    
+      <p>Id : {{ question.id }}</p>
+      <p>Category : "{{ question.category }}"</p> 
+      <p>Diffuculty : {{ question.difficulty }}</p>
+      <p>{{ question.question }}<p>
+      
       <div class="grid-container">
-        <div class="grid-content" *ngFor="let anwser of question.anwser">
+        <button class="grid-content" *ngFor="let anwser of question.anwser" (click)="onClickAnwser(anwser)">
           <span class="anwser">{{ anwser }}</span>
-        </div>
+        </button>
       </div>
+    
+    </div>
+
+    <button class="grid-content" (click)="onClickAnwser()" *ngIf="questionNum % 1 !== 0 && chosenAnwser === question.correct_answer">
+      <span class="anwser">Good Anwser</span>
+    </button>
+
+    <button class="grid-content" (click)="onClickAnwser()" *ngIf="questionNum % 1 !== 0 && chosenAnwser !== question.correct_answer">
+      <span class="anwser">Wrong Anwser</span>
+      <p>The correct anwser was : {{ question.correct_anwser }}</p>
+    </button>
+
   </div>
 
 </div>

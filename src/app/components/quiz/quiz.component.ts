@@ -94,6 +94,12 @@ export class QuizComponent implements OnInit {
       data.difficulty = diff;
       data.numberOfQuestions = numQuest;
       data.questions = data.results;
+
+      //assign questions their ids.
+      for (let i: number = 0; i < data.questions.length; i++) {
+        data.questions[i].id = i;
+      }
+
       delete data.response_code;
       delete data.results;
 
