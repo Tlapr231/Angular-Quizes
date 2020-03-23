@@ -6,7 +6,7 @@
   <div *ngFor="let question of quiz.questions">
     <div class="question" *ngIf="question.id === questionNum">
     
-      <p>Id : {{ question.id }}</p>
+      <p>Question {{ question.id + 1 }}</p>
       <p>Category : "{{ question.category }}"</p> 
       <p>Diffuculty : {{ question.difficulty }}</p>
       <p>{{ question.question }}<p>
@@ -28,9 +28,17 @@
       <h3>Correct!</h3>
     </div>
 
-    <button class="ghost" (click)="onClickNextStep(0)">
-      <span>Next Question...</span>
-    </button>
+    <div *ngIf="questionNum !== quiz.questions.length - 0.5">
+      <button class="ghost" (click)="onClickNextStep(0)">
+        <span>Next Question...</span>
+      </button>
+    </div>
+
+    <div *ngIf="questionNum === quiz.questions.length - 0.5">
+      <button class="ghost" (click)="onClickNextStep(0)">
+        <span>See Final Results</span>
+      </button>
+    </div>
 
   </div>
 
@@ -42,10 +50,17 @@
       <p>The correct answer was : {{ quiz.questions[questionNum - 0.5].correct_answer }}</p>
     </div>
 
+    <div *ngIf="questionNum !== quiz.questions.length - 0.5">
+      <button class="ghost" (click)="onClickNextStep(1)">
+        <span>Next Question...</span>
+      </button>
+    </div>
 
-    <button class="ghost" (click)="onClickNextStep(1)">
-      <span>Next Question...</span>
-    </button>
+    <div *ngIf="questionNum === quiz.questions.length - 0.5">
+      <button class="ghost" (click)="onClickNextStep(1)">
+        <span>See Final Results</span>
+      </button>
+    </div>
 
   </div>
 
@@ -56,9 +71,7 @@
       <h3>Final Results</h3>
       <p>Correct : {{ results[0] }}</p>
       <p>Incorrect : {{ results[1] }}</p>
-
     </div>
-
 
     <button class="ghost" (click)="goBack()">
       <span>Go Back</span>
@@ -67,8 +80,7 @@
   </div>
 
 </div>
-  
- 
+
 <!-- if cant find the quiz -->
 <div *ngIf="!quiz" class="wait">
   <h1>Error 404</h1>
