@@ -12,20 +12,37 @@
       <p>{{ question.question }}<p>
       
       <div class="grid-container">
-        <button class="grid-content" *ngFor="let anwser of question.anwser" (click)="onClickAnwser(anwser)">
-          <span class="anwser">{{ anwser }}</span>
+        <button class="grid-content" *ngFor="let answer of question.answer" (click)="onClickAnswer(answer)">
+          <span>{{ answer }}</span>
         </button>
       </div>
     
     </div>
 
-    <button class="grid-content" (click)="onClickAnwser()" *ngIf="questionNum % 1 !== 0 && chosenAnwser === question.correct_answer">
-      <span class="anwser">Good Anwser</span>
+  </div>
+
+  <div class="question good-answer" *ngIf="questionNum % 1 !== 0 && quiz.questions[questionNum - 0.5].correct_answer === chosenAnswer">
+
+    <div>
+      <h3>Correct!</h3>
+    </div>
+
+    <button class="ghost" (click)="onClickAnswer()">
+      <span class="ghost">Next Question...</span>
     </button>
 
-    <button class="grid-content" (click)="onClickAnwser()" *ngIf="questionNum % 1 !== 0 && chosenAnwser !== question.correct_answer">
-      <span class="anwser">Wrong Anwser</span>
-      <p>The correct anwser was : {{ question.correct_anwser }}</p>
+  </div>
+
+  <div class="question wrong-answer" *ngIf="questionNum % 1 !== 0 && quiz.questions[questionNum - 0.5].correct_answer !== chosenAnswer">
+
+    <div>
+      <h3>Wrong Answer</h3>
+      <p>The correct answer was : {{ quiz.questions[questionNum - 0.5].correct_answer }}</p>
+    </div>
+
+
+    <button class="ghost" (click)="onClickAnswer()">
+      <span class="ghost">Next Question...</span>
     </button>
 
   </div>

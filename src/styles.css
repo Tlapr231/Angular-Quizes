@@ -40,7 +40,6 @@ button.ghost:hover {
   border-color: #0F5B99;
   color: white;
 }
-
 button.ghost:active {
   background-color: #082E4D;
   border-color: #082E4D;

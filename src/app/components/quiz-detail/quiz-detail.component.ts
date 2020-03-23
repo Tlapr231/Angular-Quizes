@@ -15,7 +15,7 @@ export class QuizDetailComponent implements OnInit {
 
   quiz: Quiz;
   questionNum: number;
-  chosenAnwser: string;
+  chosenAnswer: string;
   isCorrect: boolean;
 
   constructor(
@@ -29,35 +29,36 @@ export class QuizDetailComponent implements OnInit {
     if (+this.route.snapshot.paramMap.get('id') === 1000) {
         this.quizService.getQuiz(+this.route.snapshot.paramMap.get('id')).subscribe(quiz => {
         this.quiz = quiz
-        this.mixAnwsers();
+        this.mixAnswers();
       });
     } else {
       this.quiz = this.quizService.getSelectedQuiz();
-      this.mixAnwsers();
+      this.mixAnswers();
     }
     this.questionNum = 0;
     console.log(this.quiz);
   }
 
-  mixAnwsers() {
-    console.log("inside mixAnwser");
+  mixAnswers() {
+    console.log("inside mixAnswer");
     console.log(this.quiz);
     for(var i = 0; i < this.quiz.questions.length; i++){
-      console.log(this.quiz.questions[i]);
       let question = this.quiz.questions[i];
-      let anwser = [ question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1], question.incorrect_answers[2] ];
-      this.shuffle(anwser); 
-      question.anwser = anwser;
+      let answer = [ question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1], question.incorrect_answers[2] ];
+      this.shuffle(answer); 
+      question.answer = answer;
       this.quiz.questions[i] = question;
     }
-    console.log("Done with mixAnwser");
+    console.log("Done with mixAnswer");
   }
 
-  onClickAnwser(anwser: string) {
+  onClickAnswer(answer: string) {
     this.questionNum = this.questionNum + 0.5;
-    this.chosenAnwser = anwser;
+    this.chosenAnswer = answer;
+    console.log(this.questionNum % 1 !== 0);
+    console.log(this.chosenAnswer);
   }
-
+// questionNum % 1 !== 0 && chosenAnswer === question.correct_answer
   //======= Private Function ======//
 
   //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
