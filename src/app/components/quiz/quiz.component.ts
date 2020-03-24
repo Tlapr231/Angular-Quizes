@@ -112,8 +112,6 @@ export class QuizComponent implements OnInit {
     return quizes.length > 0 ? Math.max(...quizes.map(quiz => quiz.id)) + 1 : 1000; 
   }
 
-
-
   //========== Getters ==========//
   get category() { return this.genQuizForm.get('category'); }
   get difficulty() { return this.genQuizForm.get('difficulty'); }

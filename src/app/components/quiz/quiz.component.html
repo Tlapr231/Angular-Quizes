@@ -1,40 +1,161 @@
-<ul>
-  <li *ngFor="let quiz of quizes">
-    <p>ID : {{ quiz.id }}.</p>
-    <p>Category : "{{ quiz.category }}".</p>
-    <p>Diffuculty : {{ quiz.difficulty }}.</p>
-    <p>Number of Questions : {{ quiz.numberOfQuestions }}.</p>
-    
-    <div class="center">
-      <a routerLink="/quiz/{{quiz.id}}">
-        <button class="raised" (click)="setSelectedQuiz(quiz)">Take the Quiz</button>
-      </a>
+<div class="main-margin">
+
+  <div class="grid-title">
+    <h2>Entertainement</h2>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="grid-content">
+      Board Games
+    </div>
+    <div class="grid-content">
+      Books
+    </div>
+    <div class="grid-content">
+      Cartoon & Animations
     </div>
 
-  </li>
-</ul>
+    <div class="grid-content">
+      Comics
+    </div>
+    <div class="grid-content">
+      Film
+    </div>
+    <div class="grid-content">
+      Japanese Anime & Manga
+    </div>
 
-<form [formGroup]="genQuizForm" (ngSubmit)="onSubmit()">
+    <div class="grid-content">
+      Music
+    </div>
+    <div class="grid-content">
+      Musicals & Theatres
+    </div>
+    <div class="grid-content">
+      Television
+    </div>
+
+    <div class="grid-content">
+      Video Games
+    </div>
+
+  </div>
+
+  <div class="grid-title">
+    <h2>Sciences</h2>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="grid-content">
+      Computers
+    </div>
+    <div class="grid-content">
+      Gadgets
+    </div>
+    <div class="grid-content">
+      Mathematics
+    </div>
+
+    <div class="grid-content">
+      Science and Nature
+    </div>
+
+  </div>
+
+  <div class="grid-title">
+    <h2>Social Sciences</h2>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="grid-content">
+      Art
+    </div>
+    <div class="grid-content">
+      Geography
+    </div>
+    <div class="grid-content">
+      History
+    </div>
+
+    <div class="grid-content">
+      Mythology
+    </div>
+    <div class="grid-content">
+      Politics
+    </div>
+    
+  </div>
+
+    <div class="grid-title">
+    <h2>Others</h2>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="grid-content">
+      Animals
+    </div>
+    <div class="grid-content">
+      Celebrities
+    </div>
+    <div class="grid-content">
+      Sports
+    </div>
+
+    <div class="grid-content">
+      Vehicles
+    </div>
+    <div class="grid-content">
+      General Knowledge
+    </div>
+    <div class="grid-content">
+      Random Category
+    </div>
+    
+    
+  </div>
+
+  <ul>
+    <li *ngFor="let quiz of quizes">
+      <p>ID : {{ quiz.id }}.</p>
+      <p>Category : "{{ quiz.category }}".</p>
+      <p>Diffuculty : {{ quiz.difficulty }}.</p>
+      <p>Number of Questions : {{ quiz.numberOfQuestions }}.</p>
+    
+      <div class="center">
+        <a routerLink="/quiz/{{quiz.id}}">
+          <button class="raised" (click)="setSelectedQuiz(quiz)">Take the Quiz</button>
+        </a>
+      </div>
+
+    </li>
+  </ul>
+
+  <form [formGroup]="genQuizForm" (ngSubmit)="onSubmit()">
   
-  <label> Category : 
-    <select formControlName="category">
-      <option *ngFor="let category of categories" [ngValue]="category">{{ category }}</option>
-    </select>
-  </label>
+    <label> Category : 
+      <select formControlName="category">
+        <option *ngFor="let category of categories" [ngValue]="category">{{ category }}</option>
+      </select>
+    </label>
 
-  <label> Difficulty : 
-    <select formControlName="difficulty">
-      <option *ngFor="let difficulty of difficulties" [ngValue]="difficulty">{{ difficulty }}</option>
-    </select>
-  </label>
+    <label> Difficulty : 
+      <select formControlName="difficulty">
+        <option *ngFor="let difficulty of difficulties" [ngValue]="difficulty">{{ difficulty }}</option>
+      </select>
+    </label>
 
-  <label> Number of Questions : 
-    <input type="number" min="1" max="50" formControlName="numberOfQuestions">
-  </label>
+    <label> Number of Questions : 
+      <input type="number" min="1" max="50" formControlName="numberOfQuestions">
+    </label>
 
-  <button class="raised" type="submit">Generate new Quiz</button>
+    <button class="raised" type="submit">Generate new Quiz</button>
 
-	<p>Form Value: {{ genQuizForm.value | json }}</p>
-	<p>Form Status: {{ genQuizForm.status }}</p>
+	  <p>Form Value: {{ genQuizForm.value | json }}</p>
+	  <p>Form Status: {{ genQuizForm.status }}</p>
 
-</form>
+  </form>
+</div>
