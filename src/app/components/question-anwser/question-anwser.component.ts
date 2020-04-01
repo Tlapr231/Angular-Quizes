@@ -17,7 +17,7 @@ export class QuestionAnwserComponent implements OnInit {
 
   constructor(    
     private route: ActivatedRoute,
-    private questionSercice: QuestionService,
+    private questionService: QuestionService,
     private location: Location){ }
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class QuestionAnwserComponent implements OnInit {
 
   getQuestion() {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.questionSercice.getQuestion(id).subscribe(question => {
+    this.questionService.getQuestion(id).subscribe(question => {
       this.question = question;
       this.mixAnwsers();
     }); 

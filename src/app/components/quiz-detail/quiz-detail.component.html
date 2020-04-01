@@ -3,10 +3,10 @@
   <p>Category : "{{ quiz.category }}".</p> 
   <p>Diffuculty : {{ quiz.difficulty }}.</p>
 
-  <div *ngFor="let question of quiz.questions">
-    <div class="question" *ngIf="question.id === questionNum">
+  <div *ngFor="let question of questions">
+    <div class="question" *ngIf="questions[questionNum] === question">
     
-      <p>Question {{ question.id + 1 }}</p>
+      <p>Question {{ questionNum + 1 }}</p>
       <p>Category : "{{ question.category }}"</p> 
       <p>Diffuculty : {{ question.difficulty }}</p>
       <p>{{ question.question }}<p>
@@ -22,19 +22,19 @@
   </div>
 
   <!-- Correct Answer -->
-  <div class="question good-answer" *ngIf="questionNum % 1 !== 0 && quiz.questions[questionNum - 0.5].correct_answer === chosenAnswer">
+  <div class="question good-answer" *ngIf="questionNum % 1 !== 0 && questions[questionNum - 0.5].correct_answer === chosenAnswer">
 
     <div>
       <h3>Correct!</h3>
     </div>
 
-    <div *ngIf="questionNum !== quiz.questions.length - 0.5">
+    <div *ngIf="questionNum !== questions.length - 0.5">
       <button class="ghost" (click)="onClickNextStep(0)">
         <span>Next Question...</span>
       </button>
     </div>
 
-    <div *ngIf="questionNum === quiz.questions.length - 0.5">
+    <div *ngIf="questionNum === questions.length - 0.5">
       <button class="ghost" (click)="onClickNextStep(0)">
         <span>See Final Results</span>
       </button>
@@ -43,20 +43,20 @@
   </div>
 
   <!-- Wrong Answer -->
-  <div class="question wrong-answer" *ngIf="questionNum % 1 !== 0 && quiz.questions[questionNum - 0.5].correct_answer !== chosenAnswer">
+  <div class="question wrong-answer" *ngIf="questionNum % 1 !== 0 && questions[questionNum - 0.5].correct_answer !== chosenAnswer">
 
     <div>
       <h3>Wrong Answer</h3>
-      <p>The correct answer was : {{ quiz.questions[questionNum - 0.5].correct_answer }}</p>
+      <p>The correct answer was : {{ questions[questionNum - 0.5].correct_answer }}</p>
     </div>
 
-    <div *ngIf="questionNum !== quiz.questions.length - 0.5">
+    <div *ngIf="questionNum !== questions.length - 0.5">
       <button class="ghost" (click)="onClickNextStep(1)">
         <span>Next Question...</span>
       </button>
     </div>
 
-    <div *ngIf="questionNum === quiz.questions.length - 0.5">
+    <div *ngIf="questionNum === questions.length - 0.5">
       <button class="ghost" (click)="onClickNextStep(1)">
         <span>See Final Results</span>
       </button>
@@ -65,7 +65,7 @@
   </div>
 
   <!-- Final Results -->
-  <div class="question" *ngIf="questionNum >= quiz.questions.length">
+  <div class="question" *ngIf="questionNum >= questions.length">
 
     <div>
       <h3>Final Results</h3>

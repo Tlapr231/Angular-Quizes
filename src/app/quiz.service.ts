@@ -41,7 +41,8 @@ import { User } from './interface/user';
 })
 export class QuizService {
   
-  private quizUrl = "https://my-json-server.typicode.com/Tlapr231/Angular-Quizes-DB/quizes";
+  // private quizUrl = "https://my-json-server.typicode.com/Tlapr231/Angular-Quizes-DB/quizes";
+  private quizUrl = "http://localhost:3000/api/quizes";
 
   selectedQuiz: Quiz;
 
@@ -61,30 +62,12 @@ export class QuizService {
   getQuiz(id: number) {
     const url = `${this.quizUrl}/${id}`;
     return this.http.get<Quiz>(url).pipe(
-      tap(_ => this.log(`Fetched User id : ${id}`)),
+      tap(_ => this.log(`Fetched Quiz id : ${id}`)),
       catchError(this.handleError<Quiz>(`getQuiz id : ${id}`))
     )
   }
-  // getQuiz(id: number){
-  //   //this implementation is garbage because i dont have a real server to request data from
-    
-  // }
 
-  //These 2 functions are a terrible implementation but i dont have access to a server
-  setSelectedQuiz(quiz: Quiz){
-    this.selectedQuiz = quiz;
-  }
-
-  getSelectedQuiz(): Quiz{
-    return this.selectedQuiz;
-  }
-
-  // deleteQuiz()
-
-  // updateQuiz()
-
-  //searchQuiz()
-  
+  //will be removing this soon and implementing it directly in the server.
   requestQuiz(numQuest: number, cate: string, diff: string): Observable<any> {
     let apiUrl = 'https://opentdb.com/api.php?amount=';
     

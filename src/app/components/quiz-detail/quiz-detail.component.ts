@@ -4,7 +4,9 @@ import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 
 import { Quiz } from '../../interface/quiz';
-import { QuizService } from "../../quiz.service"; 
+import { Question } from '../../interface/question';
+import { QuizService } from '../../quiz.service';
+import { QuestionService } from '../../question.service'; 
 
 @Component({
   selector: 'app-quiz-detail',
@@ -14,6 +16,7 @@ import { QuizService } from "../../quiz.service";
 export class QuizDetailComponent implements OnInit {
 
   quiz: Quiz;
+  questions: Question[];
   questionNum: number;
   chosenAnswer: string;
   results: number[];
@@ -21,36 +24,43 @@ export class QuizDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private quizService: QuizService,
+    private questionService: QuestionService,
     private location: Location
   ) { }
 
   ngOnInit() {
-    //temp
-    if (+this.route.snapshot.paramMap.get('id') === 1000) {
-        this.quizService.getQuiz(+this.route.snapshot.paramMap.get('id')).subscribe(quiz => {
-        this.quiz = quiz
-        this.mixAnswers();
-      });
-    } else {
-      this.quiz = this.quizService.getSelectedQuiz();
-      this.mixAnswers();
-    }
     this.questionNum = 0;
+    this.questions = new Array();     
     this.results = [0, 0];
-    console.log(this.quiz);
+
+    this.getQuiz();
   }
 
-  mixAnswers() {
-    console.log("inside mixAnswer");
-    console.log(this.quiz);
-    for(var i = 0; i < this.quiz.questions.length; i++){
-      let question = this.quiz.questions[i];
-      let answer = [ question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1], question.incorrect_answers[2] ];
-      this.shuffle(answer); 
-      question.answer = answer;
-      this.quiz.questions[i] = question;
+  getQuiz() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.quizService.getQuiz(id).subscribe(quiz => {
+      this.quiz = quiz;
+      this.getQuestions(quiz.questions); 
+      console.log(this.quiz);
+      console.log(this.questions);
+    });
+  }
+
+  getQuestions(ids: number[]) {
+    for (let id in ids) {
+      this.questionService.getQuestion(+id).subscribe(question => {
+        console.log(question);
+        question = this.mixAnswers(question),
+        this.questions.push(question);
+      }); 
     }
-    console.log("Done with mixAnswer");
+  }
+
+  mixAnswers(question: Question): Question {
+    let answer = [ question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1], question.incorrect_answers[2] ];
+    this.shuffle(answer); 
+    question.answer = answer;
+    return question;
   }
 
   onClickAnswer(answer: string) {
@@ -68,7 +78,6 @@ export class QuizDetailComponent implements OnInit {
     console.log("closing");
   }
   
-// questionNum % 1 !== 0 && chosenAnswer === question.correct_answer
   //======= Private Function ======//
 
   //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
