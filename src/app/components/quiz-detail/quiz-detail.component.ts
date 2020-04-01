@@ -29,33 +29,35 @@ export class QuizDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //track which Question in the array I am at (0.5 is in between questions)
     this.questionNum = 0;
-    this.questions = new Array();     
+    //track the amount of correct anwsers and wrong answers ([correct, incorrect]);
     this.results = [0, 0];
-
+    //init the array to push the questions
+    this.questions = new Array();     
     this.getQuiz();
   }
 
+  //Get the selected Quiz
   getQuiz() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.quizService.getQuiz(id).subscribe(quiz => {
       this.quiz = quiz;
       this.getQuestions(quiz.questions); 
-      console.log(this.quiz);
-      console.log(this.questions);
     });
   }
 
+  //get the Questions linked with the selected quiz
   getQuestions(ids: number[]) {
     for (let id in ids) {
       this.questionService.getQuestion(+id).subscribe(question => {
-        console.log(question);
         question = this.mixAnswers(question),
         this.questions.push(question);
       }); 
     }
   }
 
+  //mix the answers of the given question
   mixAnswers(question: Question): Question {
     let answer = [ question.correct_answer, question.incorrect_answers[0], question.incorrect_answers[1], question.incorrect_answers[2] ];
     this.shuffle(answer); 
@@ -63,16 +65,19 @@ export class QuizDetailComponent implements OnInit {
     return question;
   }
 
+  //When an answer is clicked, record the clicked answer and show results
   onClickAnswer(answer: string) {
     this.questionNum = this.questionNum + 0.5;
     this.chosenAnswer = answer;
   }
 
+  //when Next Step is click, go to the next question.
   onClickNextStep(num: number){
     this.questionNum = this.questionNum + 0.5;
     this.results[num] ++;
   }
 
+  //When go back is clicked.
   goBack(): void {
     this.location.back();
     console.log("closing");
@@ -80,7 +85,7 @@ export class QuizDetailComponent implements OnInit {
   
   //======= Private Function ======//
 
-  //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+  //Shuffle an Array (Reference : https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
   private shuffle(array: any[]) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
