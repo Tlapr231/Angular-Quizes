@@ -11,7 +11,7 @@ export class QuestionService {
   constructor( private http: HttpClient ) { }
 
   // private questionUrl = 'https://my-json-server.typicode.com/Tlapr231/Angular-Quizes-DB/questions'
-  private questionUrl = "http://localhost:3000/api/questions";
+  private questionUrl = "http://localhost:3001/api/questions";
 
   htppOptions = {
     headers: new HttpHeaders({ 'content-Type': 'application/json' })

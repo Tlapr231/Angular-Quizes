@@ -69,6 +69,10 @@ export class QuizComponent implements OnInit {
     numberOfQuestions: ['', [Validators.required] ]
   });
 
+  onClickTake(){
+    
+  }
+
   onSubmit(){
     if (!this.genQuizForm.valid) {
       return false;
@@ -116,9 +120,4 @@ export class QuizComponent implements OnInit {
   get category() { return this.genQuizForm.get('category'); }
   get difficulty() { return this.genQuizForm.get('difficulty'); }
   get numberOfQuestions() { return this.genQuizForm.get('numberOfQuestions'); }
-
-  setSelectedQuiz(quiz: Quiz) {
-    this.quizService.setSelectedQuiz(quiz);
-    console.log(quiz);
-  }
 }

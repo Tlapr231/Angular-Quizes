@@ -42,7 +42,7 @@ import { User } from './interface/user';
 export class QuizService {
   
   // private quizUrl = "https://my-json-server.typicode.com/Tlapr231/Angular-Quizes-DB/quizes";
-  private quizUrl = "http://localhost:3000/api/quizes";
+  private quizUrl = "http://localhost:3001/api/quizes";
 
   selectedQuiz: Quiz;
 

@@ -49,8 +49,8 @@ export class QuizDetailComponent implements OnInit {
 
   //get the Questions linked with the selected quiz
   getQuestions(ids: number[]) {
-    for (let id in ids) {
-      this.questionService.getQuestion(+id).subscribe(question => {
+    for (let i in ids) {
+      this.questionService.getQuestion(+ids[i]).subscribe(question => {
         question = this.mixAnswers(question),
         this.questions.push(question);
       }); 
