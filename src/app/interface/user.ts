@@ -4,4 +4,7 @@ export interface user {
   lastName: string;
   email: string;
   password: string;
+  completedQuizes: [];
+  correct_answers: number;
+  incorrect_answers: number;
 }
