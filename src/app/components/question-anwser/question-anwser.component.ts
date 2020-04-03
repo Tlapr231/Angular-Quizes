@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
@@ -13,7 +13,8 @@ import { QuestionService } from '../../question.service';
 })
 export class QuestionAnwserComponent implements OnInit {
 
-  @Input() question: Question;
+  question: Question;
+  chosenAnswer: string;
 
   constructor(    
     private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class QuestionAnwserComponent implements OnInit {
 
   getQuestion() {
     const id = +this.route.snapshot.paramMap.get('id');
+
     this.questionService.getQuestion(id).subscribe(question => {
       this.question = question;
       this.mixAnwsers();
@@ -33,9 +35,19 @@ export class QuestionAnwserComponent implements OnInit {
   }
 
   mixAnwsers() {
-    let anwser = [ this.question.correct_answer, this.question.incorrect_answers[0], this.question.incorrect_answers[1], this.question.incorrect_answers[2] ];
-    this.shuffle(anwser); 
-    this.question.anwser = anwser;
+    let answer = [ this.question.correct_answer, this.question.incorrect_answers[0], this.question.incorrect_answers[1], this.question.incorrect_answers[2] ];
+    this.shuffle(answer); 
+    this.question.answer = answer;
+  }
+
+  onClickAnswer(answer: string) {
+    this.chosenAnswer = answer;
+  }
+
+  //When go back is clicked.
+  goBack(): void {
+    this.location.back();
+    console.log("closing");
   }
 
   //======= Private Function ======//

@@ -1,21 +1,48 @@
-<div *ngIf="question">
-  <p>ID : {{ question.id }}.</p>
-  <p>Category : "{{ question.category }}".</p>
-  <p>Diffuculty : {{ question.difficulty }}.</p>
-  <p>Number of Questions : {{ question.question }}.</p>
+<!-- Question Container -->
+<div class="question" *ngIf="question">
     
-  <div *ngIf="question.anwser">
-    <p>Anwsers : </p>
-    
-    <ul>
-      <li class="question" *ngFor="let anwser of question.anwser">
-        <div *ngIf="anwser === question.correct_answers">
-          <p class="correct">{{ anwser }}</p>
-        </div>
-        <div *ngIf="anwser !== question.correct_answers">
-          <p class="incorrect">{{ anwser }}</p>
-        </div>
-      </li>
-    </ul>
+  <p>Question ID : {{ question.id }}</p>
+  <p>Category : {{ question.category }}</p> 
+  <p>Diffuculty : {{ question.difficulty }}</p>
+  <p>{{ question.question }}<p>
+      
+  <!-- Potential Answers Container -->
+  <div class="grid-container" *ngIf="!chosenAnswer">
+    <button class="grid-content" *ngFor="let answer of question.answer" (click)="onClickAnswer(answer)">
+      <span>{{ answer }}</span>
+    </button>
   </div>
+
+  <!-- Correct Answer -->
+  <div class="question good-answer" *ngIf="question.correct_answer === chosenAnswer && chosenAnswer">
+
+    <div>
+      <h3>Correct!</h3>
+    </div>
+
+    <button class="ghost" (click)="goBack()">
+      <span>Go Back</span>
+    </button>
+
+  </div>
+
+  <!-- Wrong Answer -->
+  <div class="question wrong-answer" *ngIf="question.correct_answer !== chosenAnswer && chosenAnswer">
+
+    <div>
+      <h3>Wrong Answer</h3>
+      <p>The correct answer was : {{ question.correct_answer }}</p>
+    </div>
+
+    <button class="ghost" (click)="goBack()">
+      <span>Go Back</span>
+    </button>
+
+  </div>
+</div>
+
+<!-- if cant find the quiz -->
+<div *ngIf="!question" class="wait">
+  <h1>Error 404</h1>
+  <h3>We can't seem to find what you are looking for</h3>
 </div>

@@ -1,12 +1,85 @@
-.correct:active {
-  color: green;
-}
-
-.incorrect:active {
-  color: red;
-}
-
-li {
+.question {
   list-style-type: none;
+  border-width: 2px;
+  border-style: solid;
+  margin: 8px auto;
+  border-radius: 10px;
+  padding: 0 16px 16px 16px ;
+  background-color: #fefefe;
+  width: 600px; 
 }
 
+.center {
+  text-align: center;
+}
+
+.good-answer {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #9dff9d;
+}
+.wrong-answer {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color:#ff6c6c;
+}
+
+button.ghost {
+  border-color: black;
+  background: white;
+  color: black;
+  margin-left: 0;
+  margin-right: 0;
+}
+button.ghost:hover {
+  background-color: #e2e2e2;
+}
+button.ghost:active {
+  background-color: #cacaca;
+  transform: translateY(2px);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 287px 287px;
+  grid-gap: 8px;
+  padding: 8px;
+  background-color: white;
+}
+
+.grid-content {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px 0;
+  transition: background-color 0.25s;
+}
+.grid-content:active {
+  transform: translateY(2px);
+}
+.grid-content:nth-child(1) {
+  background-color: #9444e4;
+}
+.grid-content:nth-child(1):hover {
+  background-color: #6b2fa7;
+}
+.grid-content:nth-child(2) {
+  background-color: #ff3355;
+}
+.grid-content:nth-child(2):hover {
+  background-color: #c22741;
+}
+.grid-content:nth-child(3) {
+  background-color: #ff7113;
+}
+.grid-content:nth-child(3):hover {
+  background-color: #c9580e;
+}
+.grid-content:nth-child(4) {
+  background-color: #66bf39;
+}
+.grid-content:nth-child(4):hover {
+  background-color: #4c8f2b;
+}
