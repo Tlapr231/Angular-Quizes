@@ -12,33 +12,31 @@
       <span>{{ answer }}</span>
     </button>
   </div>
+</div>
 
-  <!-- Correct Answer -->
-  <div class="question good-answer" *ngIf="question.correct_answer === chosenAnswer && chosenAnswer">
+<!-- Correct Answer -->
+<div class="question good-answer" *ngIf="question.correct_answer === chosenAnswer && chosenAnswer">
 
-    <div>
-      <h3>Correct!</h3>
-    </div>
-
-    <button class="ghost" (click)="goBack()">
-      <span>Go Back</span>
-    </button>
-
+  <div>
+    <h3>Correct!</h3>
   </div>
 
-  <!-- Wrong Answer -->
-  <div class="question wrong-answer" *ngIf="question.correct_answer !== chosenAnswer && chosenAnswer">
+  <button class="ghost" (click)="goBack()">
+    <span>Go Back</span>
+  </button>
+</div>
 
-    <div>
-      <h3>Wrong Answer</h3>
-      <p>The correct answer was : {{ question.correct_answer }}</p>
-    </div>
+<!-- Wrong Answer -->
+<div class="question wrong-answer" *ngIf="question.correct_answer !== chosenAnswer && chosenAnswer">
 
-    <button class="ghost" (click)="goBack()">
-      <span>Go Back</span>
-    </button>
-
+  <div>
+    <h3>Wrong Answer</h3>
+    <p>The correct answer was : {{ question.correct_answer }}</p>
   </div>
+
+  <button class="ghost" (click)="goBack()">
+    <span>Go Back</span>
+  </button>
 </div>
 
 <!-- if cant find the quiz -->
