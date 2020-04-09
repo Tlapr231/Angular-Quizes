@@ -18,6 +18,7 @@ import { QuestionService } from './question.service';
 import { QuizDetailComponent } from './components/quiz-detail/quiz-detail.component';
 import { QuestionDetailComponent } from './components/question-detail/question-detail.component';
 import { QuestionAnwserComponent } from './components/question-anwser/question-anwser.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   imports:      [ 
@@ -35,7 +36,7 @@ import { QuestionAnwserComponent } from './components/question-anwser/question-a
     QuestionComponent, 
     QuizDetailComponent, 
     QuestionDetailComponent, 
-    QuestionAnwserComponent 
+    QuestionAnwserComponent, HomeComponent 
   ],
   bootstrap:    [ AppComponent ],
   providers:    [ QuizService, QuestionService ]

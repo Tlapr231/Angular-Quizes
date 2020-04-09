@@ -6,6 +6,7 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { QuizDetailComponent } from './components/quiz-detail/quiz-detail.component';
 import { QuestionComponent } from './components/question/question.component';
 import { QuestionAnwserComponent } from './components/question-anwser/question-anwser.component';
+import { HomeComponent } from './components/home/home';
 
 const routes: Routes = [
   // {path: '', redirectTo: '/home', pathMatch: 'full'}
