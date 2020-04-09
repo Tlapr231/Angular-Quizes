@@ -1,16 +1,19 @@
-<ul>
-  <li class="question" *ngFor="let question of questions">
+<div class="extramargin">
 
-    <p>ID : {{ question.id }}</p>
-    <p>Category : "{{ question.category }}"</p>
-    <p>Diffuculty : {{ question.difficulty }}</p>
-    <p>Questions : {{ question.question }}</p>
+  <ul>
+    <li class="question" *ngFor="let question of questions">
 
-    <div class="center">
-      <a routerLink="/questiona/{{question.id}}">
-        <button class="raised">Take the Question</button>
-      </a>
-    </div>
+      <p>ID : {{ question.id }}</p>
+      <p>Category : "{{ question.category }}"</p>
+      <p>Diffuculty : {{ question.difficulty }}</p>
+      <p>Questions : {{ question.question }}</p>
+
+      <div class="center">
+        <a routerLink="/questiona/{{question.id}}">
+          <button class="raised">Take the Question</button>
+        </a>
+      </div>
     
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
