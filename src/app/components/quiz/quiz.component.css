@@ -1,3 +1,14 @@
+h2 {
+  font-size: 200%;
+}
+
+h3{
+  margin: 0;
+  padding-top: 12px;
+  height: 100%;
+  font-size: 150%;
+}
+
 li {
   list-style-type: none;
   border-width: 2px;
@@ -46,11 +57,6 @@ label {
   text-align: center;
 }
 
-.main-margin {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
 .grid-title:nth-child(1){
 background-color: #FFB219;
 }
@@ -89,16 +95,18 @@ div.scrollmenu {
 div.scrollmenu a {
   display: inline-block;
   margin: 5px;
-  width: 22%;
+  height: 50px;
+  width: 30%;
   color: black;
   background-color: rgb(255, 255, 255);
   text-align: center;
   text-decoration: none;
+  
 }
 
 div.scrollmenu a:hover {
-  background-color: rgb(109, 109, 109);
+  background-color: rgb(204, 204, 204);
 }
 div.scrollmenu a:active {
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(155, 155, 155);
 }
