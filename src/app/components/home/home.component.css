@@ -1,0 +1,93 @@
+h2 {
+  font-size: 200%;
+  text-align: center;
+}
+
+h3{
+  margin: 0;
+  padding-top: 12px;
+  height: 100%;
+  font-size: 150%;
+}
+
+form {
+  width: 450px;
+  list-style-type: none;
+  margin: auto;
+  margin-top: 16px;
+  padding: 0 16px 16px 16px ;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: #fefefe;
+}
+
+select {
+  display: block;
+  width: 300px;
+  margin-bottom: 8px;
+}
+
+input {
+  display: block;
+  width: 300px;
+  margin-bottom: 8px;
+}
+
+.grid-title {
+  margin: 8px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+}
+.grid-title:nth-child(1){
+background-color: #FFB219;
+}
+.grid-title:nth-child(3){
+background-color: #19FF44;
+}
+.grid-title:nth-child(5){
+background-color: #FF2449;
+}
+.grid-title:nth-child(7){
+  background-color: #B70DFF;
+}
+
+.grid-content {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px 0;
+  transition: background-color 0.25s;
+}
+
+div.scrollmenu {
+  overflow: auto;/*hidden*/
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  margin: 5px;
+  height: 50px;
+  width: 30%;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+}
+div.scrollmenu a:hover {
+  background-color: rgb(205, 205, 205);
+}
+div.scrollmenu a:active {
+  background-color: rgb(155, 155, 155);
+}
+
+.raised {
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}

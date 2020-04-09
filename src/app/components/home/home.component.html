@@ -56,4 +56,36 @@
     <a class="grid-content" routerLink="/quiz/"> <h3>Random Category</h3> </a>
   
   </div>
+
+  <form [formGroup]="genQuizForm" (ngSubmit)="onSubmit()">
+
+    <h2> Create your own Quiz</h2>
+
+	  <label> Category : 
+      <select formControlName="category">
+        <option *ngFor="let category of categories" [ngValue]="category">{{ category }}</option>
+      </select>
+    </label>
+
+	  <label> Difficulty : 
+      <select formControlName="difficulty">
+        <option *ngFor="let difficulty of difficulties" [ngValue]="difficulty">{{ difficulty }}</option>
+      </select>
+    </label>
+
+	  <label> Number of Questions : 
+      <input type="number" min="1" max="50" formControlName="numberOfQuestions">
+    </label>
+
+    <div class="center">
+	    <button class="raised" type="submit">Generate new Quiz</button>
+    </div>
+	  <!-- <p>Form Value: {{ genQuizForm.value | json }}</p>
+	  <p>Form Status: {{ genQuizForm.status }}</p> -->
+
+  </form>
+
+  <br>
+  <br>
+
 </div>
