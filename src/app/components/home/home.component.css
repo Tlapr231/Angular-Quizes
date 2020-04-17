@@ -1,13 +1,9 @@
-h2 {
-  font-size: 200%;
-  text-align: center;
+h2{
+  color: black;
 }
 
-h3{
-  margin: 0;
-  padding-top: 12px;
-  height: 100%;
-  font-size: 150%;
+div.wrappers {
+  flex-wrap: wrap;
 }
 
 form {
@@ -34,6 +30,11 @@ input {
   margin-bottom: 8px;
 }
 
+.col-sm-6 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .grid-title {
   margin: 8px 0;
   border: 2px solid black;
@@ -52,36 +53,6 @@ background-color: #FF2449;
 }
 .grid-title:nth-child(7){
   background-color: #B70DFF;
-}
-
-.grid-content {
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 20px 0;
-  transition: background-color 0.25s;
-}
-
-div.scrollmenu {
-  overflow: auto;/*hidden*/
-  white-space: nowrap;
-}
-
-div.scrollmenu a {
-  display: inline-block;
-  margin: 5px;
-  height: 50px;
-  width: 30%;
-  color: black;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  text-decoration: none;
-}
-div.scrollmenu a:hover {
-  background-color: rgb(205, 205, 205);
-}
-div.scrollmenu a:active {
-  background-color: rgb(155, 155, 155);
 }
 
 .raised {

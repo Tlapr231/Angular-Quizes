@@ -1,88 +1,153 @@
-<div class="extramargin">
+<div class="container">
 
-  <div class="grid-title">
-    <h2>Entertainement</h2>
-  </div>
-  <div class="scrollmenu">
+	<div class="grid-title">
+		<h2 class="display-3">Entertainement</h2>
+	</div>
+	<div class="scrollmenu">
 
-    <a class="grid-content" routerLink="/quiz/16"> <h3>Board Games</h3> </a>
-    <a class="grid-content" routerLink="/quiz/10"> <h3>Books</h3> </a>
-    <a class="grid-content" routerLink="/quiz/32"> <h3>Cartoon & Animations</h3> </a>
-    <a class="grid-content" routerLink="/quiz/29"> <h3>Comics</h3> </a>
-    <a class="grid-content" routerLink="/quiz/11"> <h3>Film</h3> </a>
-    <a class="grid-content" routerLink="/quiz/31"> <h3>Japanese Anime & Manga</h3> </a>
-    <a class="grid-content" routerLink="/quiz/12"> <h3>Music</h3> </a>
-    <a class="grid-content" routerLink="/quiz/13"> <h3>Musicals & Theatres</h3> </a>
-    <a class="grid-content" routerLink="/quiz/14"> <h3>Television</h3> </a>
-    <a class="grid-content" routerLink="/quiz/15"> <h3>Video Games</h3> </a>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Board Games</h5>
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut ipsum nec ante facilisis finibus. Maecenas erat tellus, laoreet sed.</p>
+						<a class="btn btn-primary" routerLink="/quiz/16">Take the Quiz</a>
+					</div>
+				</div>
+			</div>
 
-  </div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Books</h5>
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum lacus nec molestie pulvinar. Vestibulum molestie, nulla ut interdum pellentesque.</p>
+						<a class="btn btn-primary" routerLink="/quiz/10">Take the Quiz</a>
+					</div>
+				</div>
+			</div>
 
-  <div class="grid-title">
-    <h2>Sciences</h2>
-  </div>
-  <div class="scrollmenu"> 
+		</div>
 
-    <a class="grid-content" routerLink="/quiz/18"> <h3>Computers</h3> </a>
-    <a class="grid-content" routerLink="/quiz/30"> <h3>Gadgets</h3> </a>
-    <a class="grid-content" routerLink="/quiz/19"> <h3>Mathematics</h3> </a>
-    <a class="grid-content" routerLink="/quiz/17"> <h3>Science and Nature</h3> </a>
- 
-  </div>
+		<a routerLink="/quiz/32"> Cartoon & Animations</a>
+		<a routerLink="/quiz/29">
+			<h5>Comics</h5>
+		</a>
+		<a routerLink="/quiz/11">
+			<h5>Film</h5>
+		</a>
+		<a routerLink="/quiz/31">
+			<h5>Japanese Anime & Manga</h5>
+		</a>
+		<a routerLink="/quiz/12">
+			<h5>Music</h5>
+		</a>
+		<a routerLink="/quiz/13">
+			<h5>Musicals & Theatres</h5>
+		</a>
+		<a routerLink="/quiz/14">
+			<h5>Television</h5>
+		</a>
+		<a routerLink="/quiz/15">
+			<h5>Video Games</h5>
+		</a>
 
-  <div class="grid-title">
-    <h2>Social Sciences</h2>
-  </div>
-  <div class="scrollmenu">
+	</div>
 
-    <a class="grid-content" routerLink="/quiz/25"> <h3>Art</h3> </a>
-    <a class="grid-content" routerLink="/quiz/22"> <h3>Geography</h3> </a>
-    <a class="grid-content" routerLink="/quiz/23"> <h3>History</h3> </a>
-    <a class="grid-content" routerLink="/quiz/20"> <h3>Mythology</h3> </a>
-    <a class="grid-content" routerLink="/quiz/24"> <h3>Politics</h3> </a>
-    
-  </div>
+	<div class="grid-title">
+		<h2 class="display-3">Sciences</h2>
+	</div>
+	<div class="scrollmenu">
 
-  <div class="grid-title">
-    <h2>Others</h2>
-  </div>
-  <div class="scrollmenu">
+		<a routerLink="/quiz/18">
+			<h5>Computers</h5>
+		</a>
+		<a routerLink="/quiz/30">
+			<h5>Gadgets</h5>
+		</a>
+		<a routerLink="/quiz/19">
+			<h5>Mathematics</h5>
+		</a>
+		<a routerLink="/quiz/17">
+			<h5>Science and Nature</h5>
+		</a>
 
-    <a class="grid-content" routerLink="/quiz/27"> <h3>Animals</h3> </a>
-    <a class="grid-content" routerLink="/quiz/26"> <h3>Celebrities</h3> </a>
-    <a class="grid-content" routerLink="/quiz/21"> <h3>Sports</h3> </a>
-    <a class="grid-content" routerLink="/quiz/28"> <h3>Vehicles</h3> </a>
-    <a class="grid-content" routerLink="/quiz/9"> <h3>General Knowledge</h3> </a>
-    <a class="grid-content" routerLink="/quiz/"> <h3>Random Category</h3> </a>
-  
-  </div>
+	</div>
 
-  <form [formGroup]="genQuizForm" (ngSubmit)="onSubmit()">
+	<div class="grid-title">
+		<h2 class="display-3">Social Sciences</h2>
+	</div>
+	<div class="scrollmenu">
 
-    <h2> Create your own Quiz</h2>
+		<a routerLink="/quiz/25">
+			<h5>Art</h5>
+		</a>
+		<a routerLink="/quiz/22">
+			<h5>Geography</h5>
+		</a>
+		<a routerLink="/quiz/23">
+			<h5>History</h5>
+		</a>
+		<a routerLink="/quiz/20">
+			<h5>Mythology</h5>
+		</a>
+		<a routerLink="/quiz/24">
+			<h5>Politics</h5>
+		</a>
 
-	  <label> Category : 
+	</div>
+
+	<div class="grid-title">
+		<h2 class="display-3">Others</h2>
+	</div>
+	<div class="scrollmenu">
+
+		<a routerLink="/quiz/27">
+			<h5>Animals</h5>
+		</a>
+		<a routerLink="/quiz/26">
+			<h5>Celebrities</h5>
+		</a>
+		<a routerLink="/quiz/21">
+			<h5>Sports</h5>
+		</a>
+		<a routerLink="/quiz/28">
+			<h5>Vehicles</h5>
+		</a>
+		<a routerLink="/quiz/9">
+			<h5>General Knowledge</h5>
+		</a>
+		<a routerLink="/quiz/">
+			<h5>Random Category</h5>
+		</a>
+
+	</div>
+
+	<form [formGroup]="genQuizForm" (ngSubmit)="onSubmit()">
+
+		<h2> Create your own Quiz</h2>
+
+		<label> Category : 
       <select formControlName="category">
         <option *ngFor="let category of categories" [ngValue]="category">{{ category }}</option>
       </select>
     </label>
 
-	  <label> Difficulty : 
+		<label> Difficulty : 
       <select formControlName="difficulty">
         <option *ngFor="let difficulty of difficulties" [ngValue]="difficulty">{{ difficulty }}</option>
       </select>
     </label>
 
-	  <label> Number of Questions : 
+		<label> Number of Questions : 
       <input type="number" min="1" max="50" formControlName="numberOfQuestions">
     </label>
 
-    <div class="center">
-	    <button class="raised" type="submit">Generate new Quiz</button>
-    </div>
-	  <!-- <p>Form Value: {{ genQuizForm.value | json }}</p>
+		<div class="center">
+			<button class="raised" type="submit">Generate new Quiz</button>
+		</div>
+		<!-- <p>Form Value: {{ genQuizForm.value | json }}</p>
 	  <p>Form Status: {{ genQuizForm.status }}</p> -->
 
-  </form>
+	</form>
 
 </div>
